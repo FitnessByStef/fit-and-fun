@@ -74,7 +74,6 @@ const HomePage: React.FC = () => {
                 <Button className="cta-button-secondary">En savoir plus</Button>
             </section>
 
-            
         </div>
     );
 };
