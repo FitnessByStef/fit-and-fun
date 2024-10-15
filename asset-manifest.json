@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/%3Cnom-du-repository%3E/static/css/main.d092b8bb.css",
-    "main.js": "/%3Cnom-du-repository%3E/static/js/main.c236577e.js",
-    "static/media/nutrition.jpg": "/%3Cnom-du-repository%3E/static/media/nutrition.ec3178d49096381736fb.jpg",
-    "static/media/danse.jpg": "/%3Cnom-du-repository%3E/static/media/danse.78ab218c9ff16e98a2c8.jpg",
-    "static/media/bienetre.jpg": "/%3Cnom-du-repository%3E/static/media/bienetre.bd957e8514864c3394ea.jpg",
-    "static/media/fitness.jpg": "/%3Cnom-du-repository%3E/static/media/fitness.0008bb91bc3f458fea1e.jpg",
-    "static/media/logo_studio_gris.jpg": "/%3Cnom-du-repository%3E/static/media/logo_studio_gris.5a5b98dd2e6645f9fa8f.jpg",
-    "index.html": "/%3Cnom-du-repository%3E/index.html",
-    "main.d092b8bb.css.map": "/%3Cnom-du-repository%3E/static/css/main.d092b8bb.css.map",
-    "main.c236577e.js.map": "/%3Cnom-du-repository%3E/static/js/main.c236577e.js.map"
+    "main.css": "/fit-and-fun/static/css/main.d092b8bb.css",
+    "main.js": "/fit-and-fun/static/js/main.419e5e55.js",
+    "static/media/nutrition.jpg": "/fit-and-fun/static/media/nutrition.ec3178d49096381736fb.jpg",
+    "static/media/danse.jpg": "/fit-and-fun/static/media/danse.78ab218c9ff16e98a2c8.jpg",
+    "static/media/bienetre.jpg": "/fit-and-fun/static/media/bienetre.bd957e8514864c3394ea.jpg",
+    "static/media/fitness.jpg": "/fit-and-fun/static/media/fitness.0008bb91bc3f458fea1e.jpg",
+    "static/media/logo_studio_gris.jpg": "/fit-and-fun/static/media/logo_studio_gris.5a5b98dd2e6645f9fa8f.jpg",
+    "index.html": "/fit-and-fun/index.html",
+    "main.d092b8bb.css.map": "/fit-and-fun/static/css/main.d092b8bb.css.map",
+    "main.419e5e55.js.map": "/fit-and-fun/static/js/main.419e5e55.js.map"
   },
   "entrypoints": [
     "static/css/main.d092b8bb.css",
-    "static/js/main.c236577e.js"
+    "static/js/main.419e5e55.js"
   ]
 }
