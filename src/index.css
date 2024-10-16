@@ -65,9 +65,17 @@ body {
   white-space: nowrap;
 }
 
+/* Bannière d'images */
+.homepage-banner {
+  position: relative;
+  overflow: hidden; /* Assure que les images ne débordent pas */
+}
+
 .banner-image {
   width: 100%;
-  height: auto;
+  height: 300px; /* Hauteur fixe pour la bannière */
+  object-fit: cover; /* Les images remplissent l'espace tout en gardant les proportions */
+  object-position: center; /* Centrer les images pour éviter qu'elles soient mal positionnées */
 }
 
 .tab-content {
@@ -119,7 +127,6 @@ body {
   }
 
   .banner-image {
-    width: 100%;
-    height: auto;
+    height: 200px; /* Ajuste la hauteur des images sur les petits écrans */
   }
 }
