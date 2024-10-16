@@ -1,3 +1,4 @@
+/* Styles généraux */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,43 +8,118 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-.container {
-  width: 90%; /* Utilisez un pourcentage au lieu de pixels pour une largeur relative */
-  max-width: 1200px; /* Vous pouvez aussi limiter la largeur maximum pour les écrans larges */
+.homepage-container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
-img {
-  max-width: 100%;
+.homepage-header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.homepage-logo {
+  max-width: 150px;
   height: auto;
 }
 
+.homepage-menu {
+  margin-bottom: 20px;
+}
+
+.menu-horizontal {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.menu-horizontal a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.dropdown-container:hover .dropdown {
+  display: block;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+}
+
+.tab-content {
+  padding: 20px;
+}
+
+.homepage-cta {
+  text-align: center;
+  padding: 20px;
+}
+
+.cta-button,
+.cta-button-secondary {
+  margin: 10px;
+}
+
+/* Responsive design pour les petits écrans */
 @media only screen and (max-width: 600px) {
-  /* Ajustements pour les écrans plus petits */
   body {
+    font-size: 14px;
+  }
+
+  .homepage-logo {
+    max-width: 100px;
+  }
+
+  .menu-horizontal {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-horizontal a {
     font-size: 16px;
   }
 
-  /* Ajustez les éléments pour qu'ils ne dépassent pas la largeur de l'écran */
-  .element {
-    width: 100%; /* Ajustez selon le contexte de vos éléments */
-    margin: 0 auto;
+  .homepage-banner {
+    margin-top: 20px;
   }
 
-  /* Exemples de styles pour des colonnes */
-  .col {
-    width: 100%;
-    margin-bottom: 15px; /* Pour espacer les éléments empilés */
+  .cta-button,
+  .cta-button-secondary {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
   }
 
-  .container {
+  .tab-content {
+    padding: 10px;
+  }
+
+  .banner-image {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column; /* Empile les éléments verticalement sur les petits écrans */
+    height: auto;
   }
 }
