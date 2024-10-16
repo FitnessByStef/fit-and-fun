@@ -108,19 +108,45 @@ body {
         width: 100%;
         height: auto;
     }
+    .homepage-header {
+        height: 250px; /* Réduire la hauteur sur les petits écrans */
+    }
+
+    .homepage-logo {
+        width: 100px; /* Réduire la taille du logo sur les petits écrans */
+        bottom: 10px; /* Ajuster la distance par rapport au haut sur mobile */
+        left: 10px; /* Ajuster la distance par rapport à la gauche sur mobile */
+    }
+
+    .homepage-header h1 {
+        font-size: 1.8em;
+    }
+
+    .homepage-header p {
+        font-size: 1em;
+    }
 }
 
 /* Style des autres éléments */
 .homepage-header {
-    text-align: center;
+    object-fit: contain; /* Garantit que les images ne soient pas coupées */
+    position: relative;
     padding: 2em;
-    background-color: #7d7d7d;
     color: #fff;
+    background-image: url('img_fond_ecran.jpg'); /* Remplacez par le chemin de votre image */
+    background-size: contain; /* L'image reste entière quelle que soit la largeur de l'écran */
+    background-position: center; /* Centrage de l'image */
+    background-repeat: no-repeat; /* Empêche l'image de se répéter */
+    height: 300px; /* Ajustez la hauteur en fonction de la taille souhaitée */
 }
 
 .homepage-logo {
-    width: 150px;
-    margin-bottom: 1em;
+    position: absolute;
+    bottom: 30px;  /* Distance depuis le haut */
+    left: 20px; /* Distance depuis la gauche */
+    width: 150px; /* Taille du logo */
+    height: auto;
+    z-index: 1; /* Assure que le logo soit au-dessus du fond */
 }
 
 .homepage-cta {

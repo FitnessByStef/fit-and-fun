@@ -26,14 +26,14 @@ const HomePage: React.FC = () => {
         <div className="homepage-container">
             {/* Header avec logo statique */}
             <header className="homepage-header">
-                <img src={logo} className="homepage-logo" alt="Logo" />
-                <h1>Coaching de Vie</h1>
-                <p>Améliorez votre fitness, votre alimentation et votre bien-être mental.</p>
+                
             </header>
             
             {/* Menu avec icônes et sous-menu */}
             <nav className="homepage-menu">
+                
                 <ul className="menu-horizontal">
+                    
                     <li><a href="#home" onClick={() => handleTabChange('home')}><FontAwesomeIcon icon={faHome} /> Accueil</a></li>
                     <li className="dropdown-container">
                         <a href="#services"><FontAwesomeIcon icon={faDumbbell} /> Services</a>
