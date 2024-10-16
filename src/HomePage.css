@@ -192,3 +192,57 @@ body {
         height: auto;
     }
 }
+
+/* Modify button color to something more visually pleasant */
+.homepage-menu a {
+    background-color: #4CAF50; /* Change to a more pleasant green */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.homepage-menu a:hover {
+    background-color: #45a049; /* Darken the green on hover */
+}
+
+/* Adjust image gallery to ensure all images display properly in a row or grid */
+.homepage-banner .slides {
+    display: flex;
+    justify-content: space-between; /* Make sure images are displayed side by side */
+    flex-wrap: wrap; /* Allows images to wrap on smaller screens */
+}
+
+.banner-image {
+    flex: 1 1 calc(25% - 10px); /* Each image takes up 25% of the width, minus some margin */
+    margin: 5px;
+}
+
+/* Ensure feature cards are aligned in a grid for larger screens and in a column for smaller screens */
+.homepage-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .homepage-features {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+    }
+}
+
+/* Style for feature cards to ensure better visibility and presentation */
+.feature-card {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+    color: #333;
+}
+
+.feature-card p {
+    color: #555;
+}
