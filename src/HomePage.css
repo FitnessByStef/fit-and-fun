@@ -81,8 +81,10 @@ body {
     height: 300px;  /* Ajustement de la hauteur pour des images plus petites */
 }
 
+/* Conteneur des images */
 .slides {
     display: flex;
+    justify-content: space-between;
 }
 
 @keyframes slide {
@@ -170,9 +172,10 @@ body {
 
 /* Adjust images */
 .banner-image {
-    width: 100%;
+    width: 24%; /* Chaque image occupe environ un quart de la largeur */
     height: auto;
-    object-fit: cover;
+    margin: 5px;
+    object-fit: cover; /* L'image couvre son conteneur sans être déformée */
 }
 
 /* Mobile adjustments */
@@ -191,6 +194,19 @@ body {
         width: 100%;
         height: auto;
     }
+    /* Mobile: Activer le défilement horizontal des images */
+    .slides {
+        display: flex;
+        overflow-x: scroll; /* Permet le défilement horizontal sur mobile */
+        scroll-snap-type: x mandatory; /* Effet de "snap" pour une meilleure expérience utilisateur */
+    }
+
+    .banner-image {
+        flex: 0 0 auto; /* Chaque image garde la même taille sans rétrécir */
+        width: 90%; /* Les images occupent une grande partie de l'écran mobile */
+        margin-right: 10px;
+    }
+
 }
 
 /* Modify button color to something more visually pleasant */
