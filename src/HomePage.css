@@ -87,6 +87,7 @@ body {
     justify-content: space-between;
 }
 
+/* Keyframe for potential slider animation */
 @keyframes slide {
     0% { transform: translateX(0%); }
     25% { transform: translateX(-100%); }
@@ -152,33 +153,15 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Horizontal Menu */
-.menu-horizontal {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    padding: 0;
-}
-
-.menu-horizontal li {
-    margin-right: 20px;
-}
-
-.menu-horizontal li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-
-/* Adjust images */
+/* Desktop: Afficher toutes les images sur une ligne */
 .banner-image {
     width: 24%; /* Chaque image occupe environ un quart de la largeur */
     height: auto;
+    object-fit: cover;
     margin: 5px;
-    object-fit: cover; /* L'image couvre son conteneur sans être déformée */
 }
 
-/* Mobile adjustments */
+/* Mobile: Activer le défilement horizontal pour les images */
 @media (max-width: 600px) {
     .feature-card {
         font-size: 14px;
@@ -194,19 +177,36 @@ body {
         width: 100%;
         height: auto;
     }
-    /* Mobile: Activer le défilement horizontal des images */
+
     .slides {
         display: flex;
-        overflow-x: scroll; /* Permet le défilement horizontal sur mobile */
-        scroll-snap-type: x mandatory; /* Effet de "snap" pour une meilleure expérience utilisateur */
+        overflow-x: auto; /* Permet le défilement horizontal sur mobile */
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch; /* Améliore le défilement pour iOS */
     }
 
     .banner-image {
-        flex: 0 0 auto; /* Chaque image garde la même taille sans rétrécir */
-        width: 90%; /* Les images occupent une grande partie de l'écran mobile */
+        flex: 0 0 80%; /* Les images occupent une grande partie de l'écran mobile */
         margin-right: 10px;
+        scroll-snap-align: center; /* L'image s'aligne au centre lors du défilement */
     }
+}
 
+/* Style for feature cards to ensure better visibility and presentation */
+.feature-card {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+    color: #333;
+}
+
+.feature-card p {
+    color: #555;
 }
 
 /* Modify button color to something more visually pleasant */
@@ -226,39 +226,4 @@ body {
     display: flex;
     justify-content: space-between; /* Make sure images are displayed side by side */
     flex-wrap: wrap; /* Allows images to wrap on smaller screens */
-}
-
-.banner-image {
-    flex: 1 1 calc(25% - 10px); /* Each image takes up 25% of the width, minus some margin */
-    margin: 5px;
-}
-
-/* Ensure feature cards are aligned in a grid for larger screens and in a column for smaller screens */
-.homepage-features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
-    gap: 20px;
-}
-
-@media (max-width: 600px) {
-    .homepage-features {
-        grid-template-columns: 1fr; /* Single column layout for mobile */
-    }
-}
-
-/* Style for feature cards to ensure better visibility and presentation */
-.feature-card {
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.feature-card h3 {
-    color: #333;
-}
-
-.feature-card p {
-    color: #555;
 }
