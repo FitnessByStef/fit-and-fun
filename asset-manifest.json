@@ -1,18 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.acf0dc17.css",
-    "main.js": "/static/js/main.e474fe88.js",
-    "static/media/nutrition.jpg": "/static/media/nutrition.ec3178d49096381736fb.jpg",
-    "static/media/danse.jpg": "/static/media/danse.78ab218c9ff16e98a2c8.jpg",
-    "static/media/bienetre.jpg": "/static/media/bienetre.bd957e8514864c3394ea.jpg",
-    "static/media/fitness.jpg": "/static/media/fitness.0008bb91bc3f458fea1e.jpg",
-    "static/media/img_fond_ecran.jpg": "/static/media/img_fond_ecran.ad6a386213f8e5abea71.jpg",
+    "main.css": "/static/css/main.07517121.css",
+    "main.js": "/static/js/main.87a07bcb.js",
+    "static/media/Plafond_StudioGris.jpg": "/static/media/Plafond_StudioGris.0d7fd8ccc97356e4674f.jpg",
+    "static/media/CardioBoxing_StudioGris.jpg": "/static/media/CardioBoxing_StudioGris.67f4825dcba77ece92a1.jpg",
+    "static/media/Cerceaux_Aerien_StudioGris.jpg": "/static/media/Cerceaux_Aerien_StudioGris.d9cdc5269276e367f9c0.jpg",
+    "static/media/Salle_StudioGris.jpg": "/static/media/Salle_StudioGris.ae09b844cfeea9aa746d.jpg",
+    "static/media/CoinSalon_StudioGris.jpg": "/static/media/CoinSalon_StudioGris.9597cff2816ac5bc6099.jpg",
+    "static/media/MaylisCerceau.jpg": "/static/media/MaylisCerceau.872f3d50ae8a851d98d5.jpg",
+    "static/media/Stephane.jpg": "/static/media/Stephane.d765017439fa9beb5b39.jpg",
+    "static/media/Sarah.jpg": "/static/media/Sarah.fa245ccf24586ff616c9.jpg",
+    "static/media/Deborah.jpg": "/static/media/Deborah.c3ff225703dd35d3f4c3.jpg",
+    "static/media/Julia.jpg": "/static/media/Julia.0b40caab2b356082ec0e.jpg",
+    "static/media/Maylis.jpg": "/static/media/Maylis.efa407d9807b91af7f02.jpg",
+    "static/media/logo_studio_gris.jpg": "/static/media/logo_studio_gris.5a5b98dd2e6645f9fa8f.jpg",
     "index.html": "/index.html",
-    "main.acf0dc17.css.map": "/static/css/main.acf0dc17.css.map",
-    "main.e474fe88.js.map": "/static/js/main.e474fe88.js.map"
+    "main.07517121.css.map": "/static/css/main.07517121.css.map",
+    "main.87a07bcb.js.map": "/static/js/main.87a07bcb.js.map"
   },
   "entrypoints": [
-    "static/css/main.acf0dc17.css",
-    "static/js/main.e474fe88.js"
+    "static/css/main.07517121.css",
+    "static/js/main.87a07bcb.js"
   ]
 }
