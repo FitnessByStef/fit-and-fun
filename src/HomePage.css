@@ -3,11 +3,20 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
+    font-size: 1.1em; /* Légèrement plus grand pour améliorer la lisibilité */
+    line-height: 1.6; /* Espacement entre les lignes pour rendre le texte aéré */
+    color: #333; /* Couleur subtile et élégante */
+    margin: 20px 0; /* Ajoute de l'espace autour du paragraphe */
+    text-align: justify; /* Justifie le texte pour un alignement professionnel */
+}
 .homepage-container {
+    background-color:#dad7d7;;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 
 /* Menu horizontal avec icônes */
 .menu-horizontal {
@@ -114,8 +123,7 @@ body {
 
     .homepage-logo {
         width: 100px; /* Réduire la taille du logo sur les petits écrans */
-        bottom: 10px; /* Ajuster la distance par rapport au haut sur mobile */
-        left: 10px; /* Ajuster la distance par rapport à la gauche sur mobile */
+        
     }
 
     .homepage-header h1 {
@@ -132,18 +140,15 @@ body {
     object-fit: contain; /* Garantit que les images ne soient pas coupées */
     position: relative;
     padding: 2em;
-    color: #fff;
-    background-image: url('img_fond_ecran.jpg'); /* Remplacez par le chemin de votre image */
+    background-color: #dad7d7;
     background-size: contain; /* L'image reste entière quelle que soit la largeur de l'écran */
     background-position: center; /* Centrage de l'image */
     background-repeat: no-repeat; /* Empêche l'image de se répéter */
-    height: 300px; /* Ajustez la hauteur en fonction de la taille souhaitée */
+    height: 150px; /* Ajustez la hauteur en fonction de la taille souhaitée */
 }
 
 .homepage-logo {
-    position: absolute;
-    bottom: 30px;  /* Distance depuis le haut */
-    left: 20px; /* Distance depuis la gauche */
+    position: center;
     width: 150px; /* Taille du logo */
     height: auto;
     z-index: 1; /* Assure que le logo soit au-dessus du fond */
@@ -172,7 +177,86 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 2em;
-    background-color: #7d7d7d;
+}
+
+.fitandfunformheader{
+    text-align: center;
+}
+
+.fitandfunform{
+    color: #000000;
+}
+
+.fitkidsform{
+    color: #000000;
+}
+
+.fitkidsformheader{
+    text-align: center;
+}
+
+.bachataform{
+    color: #000000;
+}
+
+.bachataformheader{
+    text-align: center;
+}
+
+.stretchingform{
+    color: #000000;
+}
+
+.stretchingformheader{
+    text-align: center;
+}
+
+.twerkform{
+    color: #000000;
+}
+
+.twerkformheader{
+    text-align: center;
+}
+
+.commercialform{
+    color: #000000;
+}
+
+.commercialformheader{
+    text-align: center;
+}
+
+.danseurbaineform{
+    color: #000000;
+}
+
+.danseurbaineformheader{
+    text-align: center;
+}
+
+.cerceauaerienform{
+    color: #000000;
+}
+
+.cerceauaerienformheader{
+    text-align: center;
+}
+
+.heelsform{
+    color: #000000;
+}
+
+.heelsformheader{
+    text-align: center;
+}
+
+.aproposform{
+    color: #000000
+}
+
+.aproposformheader{
+    text-align: center;
 }
 
 .feature-card {
