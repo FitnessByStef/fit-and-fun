@@ -1,7 +1,29 @@
+
 /* Styles généraux */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+}
+.social-media {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.social-media p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.social-button {
+    color: #ff007f;
+    transition: color 0.3s ease;
+    padding: 10px; /* Ajoute du padding autour des icônes */
+}
+
+.social-button:hover {
+    color: #000;
 }
 p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
@@ -12,11 +34,10 @@ p {
     text-align: justify; /* Justifie le texte pour un alignement professionnel */
 }
 .homepage-container {
-    background-color:#dad7d7;;
+    background-color:#dad7d7;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 
 /* Menu horizontal avec icônes */
 .menu-horizontal {
@@ -117,13 +138,19 @@ p {
         width: 100%;
         height: auto;
     }
+
     .homepage-header {
         height: 250px; /* Réduire la hauteur sur les petits écrans */
+        display: flex;
+        justify-content: space-between; /* Place le logo et les boutons sur la même ligne */
+        align-items: center;
+        padding: 1em;
+        background-color: #fff;
     }
 
     .homepage-logo {
         width: 100px; /* Réduire la taille du logo sur les petits écrans */
-        
+    height: auto;
     }
 
     .homepage-header h1 {
@@ -145,6 +172,7 @@ p {
     background-position: center; /* Centrage de l'image */
     background-repeat: no-repeat; /* Empêche l'image de se répéter */
     height: 150px; /* Ajustez la hauteur en fonction de la taille souhaitée */
+    margin-bottom: 40px; /* Augmenter la marge sous le header */
 }
 
 .homepage-logo {
@@ -179,86 +207,6 @@ p {
     padding: 2em;
 }
 
-.fitandfunformheader{
-    text-align: center;
-}
-
-.fitandfunform{
-    color: #000000;
-}
-
-.fitkidsform{
-    color: #000000;
-}
-
-.fitkidsformheader{
-    text-align: center;
-}
-
-.bachataform{
-    color: #000000;
-}
-
-.bachataformheader{
-    text-align: center;
-}
-
-.stretchingform{
-    color: #000000;
-}
-
-.stretchingformheader{
-    text-align: center;
-}
-
-.twerkform{
-    color: #000000;
-}
-
-.twerkformheader{
-    text-align: center;
-}
-
-.commercialform{
-    color: #000000;
-}
-
-.commercialformheader{
-    text-align: center;
-}
-
-.danseurbaineform{
-    color: #000000;
-}
-
-.danseurbaineformheader{
-    text-align: center;
-}
-
-.cerceauaerienform{
-    color: #000000;
-}
-
-.cerceauaerienformheader{
-    text-align: center;
-}
-
-.heelsform{
-    color: #000000;
-}
-
-.heelsformheader{
-    text-align: center;
-}
-
-.aproposform{
-    color: #000000
-}
-
-.aproposformheader{
-    text-align: center;
-}
-
 .feature-card {
     background-color: #fff;
     padding: 1.5em;
@@ -287,4 +235,40 @@ p {
 
 .feature-card p {
     color: #555;
+}
+
+/* Adjust the feature cards layout on mobile */
+@media (max-width: 600px) {
+    .homepage-features {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    .feature-card {
+        width: 100%; /* Make sure feature cards take full width on mobile */
+        margin: 0 0 1.5em 0;
+        padding: 1.5em;
+        box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+
+    .feature-card p {
+        font-size: 1.1em; /* Improve readability of paragraphs on mobile */
+        line-height: 1.6;
+        text-align: justify;
+        margin: 10px 0;
+    }
+}
+
+/* Ensure parent containers take full width */
+.homepage-features {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }

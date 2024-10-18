@@ -19,6 +19,8 @@ import Heels from './components/Heels';
 import BachataForm from './components/BachataForm';
 import AProposForm from './components/APropos';
 import HomeStudioGrisForm from './components/HomeStudioGris';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'; // Import des icônes de réseaux sociaux
+
 
 const HomePage: React.FC = () => {
     const [activeTab, setActiveTab] = useState<string>('fitness'); // état pour gérer l'onglet actif
@@ -57,6 +59,16 @@ const HomePage: React.FC = () => {
             {/* Header avec logo statique */}
             <header className="homepage-header">
                 <img src={logo} alt="Fitness" className="homepage-logo " />
+                <div className="social-media">
+                    <p>Suivez-nous sur :</p>
+                    <a href="https://www.facebook.com/profile.php?id=61559492342771" target="_blank" rel="noopener noreferrer" className="social-button">
+                        <FontAwesomeIcon icon={faFacebook} size="2x" />
+                    </a>
+                    <a href="https://www.instagram.com/le_studiogris/" target="_blank" rel="noopener noreferrer" className="social-button">
+                        <FontAwesomeIcon icon={faInstagram} size="2x" />
+                    </a>
+                </div>
+                
             </header>
             
             {/* Menu avec icônes et sous-menu */}
