@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.07517121.css",
-    "main.js": "/static/js/main.87a07bcb.js",
+    "main.css": "/static/css/main.23475f99.css",
+    "main.js": "/static/js/main.2ee44a45.js",
     "static/media/Plafond_StudioGris.jpg": "/static/media/Plafond_StudioGris.0d7fd8ccc97356e4674f.jpg",
     "static/media/CardioBoxing_StudioGris.jpg": "/static/media/CardioBoxing_StudioGris.67f4825dcba77ece92a1.jpg",
     "static/media/Cerceaux_Aerien_StudioGris.jpg": "/static/media/Cerceaux_Aerien_StudioGris.d9cdc5269276e367f9c0.jpg",
@@ -15,11 +15,11 @@
     "static/media/Maylis.jpg": "/static/media/Maylis.efa407d9807b91af7f02.jpg",
     "static/media/logo_studio_gris.jpg": "/static/media/logo_studio_gris.5a5b98dd2e6645f9fa8f.jpg",
     "index.html": "/index.html",
-    "main.07517121.css.map": "/static/css/main.07517121.css.map",
-    "main.87a07bcb.js.map": "/static/js/main.87a07bcb.js.map"
+    "main.23475f99.css.map": "/static/css/main.23475f99.css.map",
+    "main.2ee44a45.js.map": "/static/js/main.2ee44a45.js.map"
   },
   "entrypoints": [
-    "static/css/main.07517121.css",
-    "static/js/main.87a07bcb.js"
+    "static/css/main.23475f99.css",
+    "static/js/main.2ee44a45.js"
   ]
 }
