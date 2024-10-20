@@ -20,6 +20,7 @@ import BachataForm from './components/BachataForm';
 import AProposForm from './components/APropos';
 import HomeStudioGrisForm from './components/HomeStudioGris';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'; // Import des icônes de réseaux sociaux
+import Chatbot from './components/ChatBot';
 
 
 const HomePage: React.FC = () => {
@@ -51,9 +52,7 @@ const HomePage: React.FC = () => {
                             <li><a href="#bachata" onClick={() => handleTabChange('bachata')}><FontAwesomeIcon icon={faMusic} /> Bachata</a></li>
                         </ul>
                     </li>
-                    <li><a href="#about" onClick={() => handleTabChange('about')}><FontAwesomeIcon icon={faInfoCircle} /> Qui sommes-nous ?</a></li>
-                    <li><a href="#contact" onClick={() => handleTabChange('contact')}><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
-                    
+                    <li><a href="#about" onClick={() => handleTabChange('about')}><FontAwesomeIcon icon={faInfoCircle} /> Qui sommes-nous ?</a></li>                    
                 </ul>
             </nav>
             {/* Header avec logo statique */}
@@ -106,6 +105,7 @@ const HomePage: React.FC = () => {
                 <Button className="cta-button-secondary">En savoir plus</Button>
             </section>
 
+            <Chatbot /> 
         </div>
     );
 };

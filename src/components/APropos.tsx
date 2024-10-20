@@ -1,5 +1,5 @@
 import React from 'react';
-import CoachJulia from './medias/coachs/Julia.jpg';
+import ImgSophieMaylis from './medias/coachs/SophieMaylis.jpg';
 
 const AProposForm: React.FC = () => {
     return (
@@ -10,6 +10,7 @@ const AProposForm: React.FC = () => {
             <section className="homepage-features">
                 <div className="feature-card" id="coach">
                     <h3>Qui sommes-nous ?</h3>
+                    <img src={ImgSophieMaylis} alt="CoachStephane" className="banner-image" />
                 </div>
                 <div className="feature-card" id="commercial">
                     <h3>Qui sommes nous ?</h3>
