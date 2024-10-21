@@ -1,6 +1,7 @@
 import React from 'react';
 import CoachStephane from './medias/coachs/Stephane.jpg';
-const FitAndFun: React.FC = () => {
+import CoachMaylis from './medias/coachs/Maylis.jpg';
+const FitAndFunCoach_Form: React.FC = () => {
     return (
         <div className="fitandfunform">
             <h2 className="fitandfunformheader">🏋🏼‍♀️ FIT AND FUN 🏋🏼‍♀️</h2>
@@ -24,9 +25,22 @@ L’objectif est de tonifier, raffermir et améliorer la performance musculaire 
 💌 Rejoignez notre communauté vibrante de sportif
                     </p>
                 </div>
+
+                <div className="feature-card" id="coach">
+                    <h3>Stretching : Maylis</h3>
+                    <img src={CoachMaylis} alt="CoachMaylis" className="banner-image" />
+                </div>
+                <div className="feature-card" id="stretching">
+                    <h3>Fit And Fun</h3>
+                    <p>
+                        Découvrez notre prof de stretching, qui enseignera le stretching au 🏃💃STUDIO GRIS 💃🏃.
+
+💌 Rejoignez notre communauté vibrante de sportif
+                    </p>
+                </div>
             </section>
         </div>
     );
 };
 
-export default FitAndFun;
+export default FitAndFunCoach_Form;

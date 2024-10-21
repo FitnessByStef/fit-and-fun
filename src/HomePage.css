@@ -1,9 +1,85 @@
-
 /* Styles généraux */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+
+.homepage-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.homepage-menu {
+    margin-bottom: 20px;
+}
+
+/* Style pour le menu Kendo */
+.k-menu {
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+}
+
+.k-menu-item {
+    padding: 5px 10px;
+    font-size: 13px;
+    color: #fff;
+    white-space: nowrap;
+    cursor: pointer; /* Curseur pointeur pour les items du menu */
+}
+
+.k-menu-item .k-link {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Curseur pointeur pour les liens dans les items du menu */
+}
+
+.k-menu-item:hover {
+    background-color: #ff007f;
+    cursor: pointer; /* Curseur pointeur lors du survol */
+}
+
+.k-menu-item.k-state-selected {
+    background-color: #ff66a3;
+}
+
+.k-menu-popup {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sous-menus */
+.k-menu-item .k-menu-group {
+    background-color: #000;
+}
+
+.k-menu-item .k-menu-group .k-menu-item {
+    padding: 5px 10px;
+    background-color: #000;
+    font-size: 13px;
+    color: #fff;
+    white-space: nowrap;
+    cursor: pointer; /* Curseur pointeur pour les sous-menus */
+}
+
+.k-menu-item .k-menu-group .k-menu-item:hover {
+    background-color: #ff007f;
+    cursor: pointer; /* Curseur pointeur lors du survol des sous-menus */
+}
+
+.k-menu-item .k-menu-group .k-menu-item.k-state-selected {
+    background-color: #ff66a3;
+}
+
+/* Ajustement de la taille des icônes */
+.k-icon {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/* Logo et réseaux sociaux */
 .social-media {
     display: flex;
     align-items: center;
@@ -19,169 +95,52 @@ body {
 .social-button {
     color: #ff007f;
     transition: color 0.3s ease;
-    padding: 10px; /* Ajoute du padding autour des icônes */
+    padding: 10px;
 }
 
 .social-button:hover {
     color: #000;
-}
-p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
-    font-size: 1.1em; /* Légèrement plus grand pour améliorer la lisibilité */
-    line-height: 1.6; /* Espacement entre les lignes pour rendre le texte aéré */
-    color: #333; /* Couleur subtile et élégante */
-    margin: 20px 0; /* Ajoute de l'espace autour du paragraphe */
-    text-align: justify; /* Justifie le texte pour un alignement professionnel */
-}
-.homepage-container {
-    background-color:#dad7d7;
-    max-width: 1200px;
-    margin: 0 auto;
+    cursor: pointer; /* Curseur pointeur sur les boutons de réseaux sociaux */
 }
 
-/* Menu horizontal avec icônes */
-.menu-horizontal {
-    list-style-type: none;
+/* Header */
+.homepage-header {
     display: flex;
-    justify-content: center;
-    gap: 2em;
-    padding: 1em;
-    background-color: #000;
-}
-
-.menu-horizontal li {
-    position: relative;
-}
-
-.menu-horizontal li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-    padding: 0.5em 1em;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: #ff007f;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    padding: 1em;
+    background-color: #fff;
 }
 
-.menu-horizontal li a:hover {
-    background-color: #ff66a3;
+.homepage-logo {
+    width: 150px;
+    height: auto;
 }
 
-.menu-horizontal li a svg {
-    margin-right: 0.5em;
+/* Bannière */
+.homepage-banner {
+    margin-bottom: 20px;
 }
 
-/* Sous-menu qui ne s'affiche qu'au survol */
-.dropdown-container:hover .dropdown {
-    display: block;
-}
-
-.dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ff007f;
-    padding: 0.5em;
-    border-radius: 5px;
-    z-index: 1;
-    flex-direction: column;
-}
-
-.dropdown li {
-    padding: 0.5em;
-}
-
-.dropdown li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5em;
-}
-
-.dropdown li a:hover {
-    background-color: #7d7d7d;
-}
-
-/* Bandeau d'images */
 .slider {
     width: 100%;
     overflow: hidden;
     height: auto;
 }
 
-/* Conteneur des images */
 .slides {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Grille pour 4 images */
-    gap: 10px; /* Espacement entre les images */
-    align-items: center; /* Centrer verticalement */
-    justify-items: center; /* Centrer horizontalement */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
-/* Style des images */
 .banner-image {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Garantit que les images ne soient pas coupées */
+    object-fit: contain;
 }
 
-/* Style adaptatif pour mobile */
-@media (max-width: 600px) {
-    .slides {
-        grid-template-columns: repeat(2, 1fr); /* Réduit à 2 images par ligne sur mobile */
-        gap: 5px;
-    }
-
-    .banner-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .homepage-header {
-        height: 250px; /* Réduire la hauteur sur les petits écrans */
-        display: flex;
-        justify-content: space-between; /* Place le logo et les boutons sur la même ligne */
-        align-items: center;
-        padding: 1em;
-        background-color: #fff;
-    }
-
-    .homepage-logo {
-        width: 100px; /* Réduire la taille du logo sur les petits écrans */
-    height: auto;
-    }
-
-    .homepage-header h1 {
-        font-size: 1.8em;
-    }
-
-    .homepage-header p {
-        font-size: 1em;
-    }
-}
-
-/* Style des autres éléments */
-.homepage-header {
-    object-fit: contain; /* Garantit que les images ne soient pas coupées */
-    position: relative;
-    padding: 2em;
-    background-color: #dad7d7;
-    background-size: contain; /* L'image reste entière quelle que soit la largeur de l'écran */
-    background-position: center; /* Centrage de l'image */
-    background-repeat: no-repeat; /* Empêche l'image de se répéter */
-    height: 150px; /* Ajustez la hauteur en fonction de la taille souhaitée */
-    margin-bottom: 40px; /* Augmenter la marge sous le header */
-}
-
-.homepage-logo {
-    position: center;
-    width: 150px; /* Taille du logo */
-    height: auto;
-    z-index: 1; /* Assure que le logo soit au-dessus du fond */
-}
-
+/* Call to action */
 .homepage-cta {
     text-align: center;
     margin: 2em 0;
@@ -199,80 +158,36 @@ p {
 
 .cta-button:hover, .cta-button-secondary:hover {
     background-color: #000;
+    cursor: pointer; /* Curseur pointeur sur les boutons */
 }
 
-.homepage-features {
-    display: flex;
-    justify-content: space-around;
-    padding: 2em;
-}
-
-.feature-card {
-    background-color: #fff;
-    padding: 1.5em;
-    width: 30%;
-    text-align: center;
-    border: 2px solid #ff007f;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Style pour les feature cards */
-.feature-card {
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.feature-card h3 {
-    color: #333;
-}
-
-.feature-card p {
-    color: #555;
-}
-
-/* Adjust the feature cards layout on mobile */
+/* Mobile adjustments */
 @media (max-width: 600px) {
-    .homepage-features {
-        display: flex;
+    .slider {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .homepage-header {
         flex-direction: column;
-        padding: 1em;
+        justify-content: center;
+        text-align: center;
     }
 
-    .feature-card {
-        width: 100%; /* Make sure feature cards take full width on mobile */
-        margin: 0 0 1.5em 0;
-        padding: 1.5em;
-        box-sizing: border-box; /* Ensure padding is included in the width */
+    .homepage-logo {
+        width: 100px;
+        height: auto;
     }
 
-    .feature-card p {
-        font-size: 1.1em; /* Improve readability of paragraphs on mobile */
-        line-height: 1.6;
-        text-align: justify;
-        margin: 10px 0;
+    .homepage-banner {
+        margin-bottom: 20px;
+    }
+
+    .homepage-cta {
+        text-align: center;
     }
 }
 
-/* Ensure parent containers take full width */
-.homepage-features {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-section {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
+/* Chatbot styles */
 .chatbot-container {
     position: fixed;
     bottom: 20px;
@@ -291,6 +206,7 @@ section {
 
 .chat-icon:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .chat-window {
@@ -333,4 +249,5 @@ section {
 
 .chat-window button:hover {
     background-color: #e6006b;
+    cursor: pointer; /* Curseur pointeur sur le bouton d'envoi */
 }

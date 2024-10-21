@@ -1,7 +1,7 @@
 import React from 'react';
 import CoachMaylis from './medias/coachs/Maylis.jpg';
 
-const Twerk: React.FC = () => {
+const TwerkCoach_Form: React.FC = () => {
     return (
         <div className="twerkform">
             <h2 className="twerkformheader">🍑 TWERK 🍑</h2>
@@ -27,4 +27,4 @@ Maylis croit en l’importance de se sentir bien, elle utilise le Twerk comme un
     );
 };
 
-export default Twerk;
+export default TwerkCoach_Form;

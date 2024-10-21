@@ -2,25 +2,23 @@ import React, { useState } from 'react';
 import './HomePage.css';
 import { Button } from '@progress/kendo-react-buttons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faDumbbell, faUtensils, faSpa, faMusic, faInfoCircle, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import logo from './components/medias/logo/logo_studio_gris.jpg';
 import CardioBoxing from './components/medias/batiment/CardioBoxing_StudioGris.jpg';
 import Cerceaux_Aerien from './components/medias/batiment/Cerceaux_Aerien_StudioGris.jpg';
 import Plafond_StudioGris from './components/medias/batiment/Plafond_StudioGris.jpg';
 import CoinSalon from './components/medias/batiment/CoinSalon_StudioGris.jpg';
-import FitAndFun from './components/FitAndFun';
-import FitKids from './components/FitKids';
-import Stretching from './components/Stretching';
-import Twerk from './components/Twerk';
-import CommercialForm from './components/CommercialForm';
-import DanseUrbaineForm from './components/DanseUrbaineForm';
-import CerceauAerienForm from './components/CerceauAerienForm';
-import Heels from './components/Heels';
-import BachataForm from './components/BachataForm';
+import FitAndFunCoach_Form from './components/FitAndFunCoach_Form';
+import TwerkCoach_Form from './components/TwerkCoach_Form';
+import CommercialCoach_Form from './components/CommercialCoach_Form';
+import DanseUrbaineCoach_Form from './components/DanseUrbaineCoach_Form';
+import CerceauAerienCoach_Form from './components/CerceauAerienCoach_Form';
+import HeelsCoach_Form from './components/HeelsCoach_Form';
+import BachataCoach_Form from './components/BachataForm';
 import AProposForm from './components/APropos';
 import HomeStudioGrisForm from './components/HomeStudioGris';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'; // Import des icônes de réseaux sociaux
 import Chatbot from './components/ChatBot';
+import { Menu, MenuItemModel  } from '@progress/kendo-react-layout';
 
 
 const HomePage: React.FC = () => {
@@ -30,30 +28,65 @@ const HomePage: React.FC = () => {
     const handleTabChange = (tab: string) => {
         setActiveTab(tab);
     };
-
+    const menuItems: MenuItemModel[] = [
+        { text: 'Accueil', data: { tab: 'home' } },
+        {
+            text: 'Cours', data: { tab: 'cours' },
+            items: [
+                {
+                    text: 'Fit And Fun', data: { tab: 'fitandfun' },
+                    items: [
+                        { text: 'Les coachs', data: { tab: 'fitandfuncoach' } },
+                    ]
+                },
+                {
+                    text: 'Twerk', data: { tab: 'twerk' },
+                    items: [
+                        { text: 'La coach', data: { tab: 'twerkcoach' } },
+                    ]
+                },
+                {
+                    text: 'Commercial', data: { tab: 'commercial' },
+                    items: [
+                        { text: 'La coach', data: { tab: 'commercialcoach' } },
+                    ]
+                },
+                {
+                    text: 'Danse Urbaine', data: { tab: 'danseurbaine' },
+                    items: [
+                        { text: 'La coach', data: { tab: 'danseurbainecoach' } },
+                    ]
+                },
+                {
+                    text: 'Cerceau Aérien', data: { tab: 'cerceauaerien' },
+                    items: [
+                        { text: 'La coach', data: { tab: 'cerceauaeriencoach' } },
+                    ]
+                },
+                {
+                    text: 'Heels', data: { tab: 'heels' },
+                    items: [
+                        { text: 'La coach', data: { tab: 'heelscoach' } },
+                    ]
+                },
+                {
+                    text: 'Bachata', data: { tab: 'bachata' },
+                    items: [
+                        { text: 'Le coach', data: { tab: 'bachatacoach' } },
+                    ]
+                }
+            ]
+        },
+        { text: 'Qui sommes-nous ?', data: { tab: 'about' } },
+    ];
+    
     return (
         <div className="homepage-container">
             <nav className="homepage-menu">
-                
-                <ul className="menu-horizontal">
-                    
-                    <li><a href="#home" onClick={() => handleTabChange('home')}><FontAwesomeIcon icon={faHome} /> Accueil</a></li>
-                    <li className="dropdown-container">
-                        <a href="#cours"><FontAwesomeIcon icon={faDumbbell} /> Cours</a>
-                        <ul className="dropdown">
-                            <li><a href="#fitandfun" onClick={() => handleTabChange('fitandfun')}><FontAwesomeIcon icon={faDumbbell} /> Fit And Fun</a></li>
-                            <li><a href="#fitkids" onClick={() => handleTabChange('fitkids')}><FontAwesomeIcon icon={faDumbbell} /> Fit Kids</a></li>
-                            <li><a href="#stretching" onClick={() => handleTabChange('stretching')}><FontAwesomeIcon icon={faDumbbell} /> Stretching</a></li>
-                            <li><a href="#twerk" onClick={() => handleTabChange('twerk')}><FontAwesomeIcon icon={faMusic} /> Twerk</a></li>
-                            <li><a href="#commercial" onClick={() => handleTabChange('commercial')}><FontAwesomeIcon icon={faMusic} /> Commercial</a></li>
-                            <li><a href="#danseurbaine" onClick={() => handleTabChange('danseurbaine')}><FontAwesomeIcon icon={faMusic} /> Danse Urbaine</a></li>
-                            <li><a href="#cerceauaerien" onClick={() => handleTabChange('cerceauaerien')}><FontAwesomeIcon icon={faMusic} /> Cerceau Aérien</a></li>
-                            <li><a href="#heels" onClick={() => handleTabChange('heels')}><FontAwesomeIcon icon={faMusic} /> Heels</a></li>
-                            <li><a href="#bachata" onClick={() => handleTabChange('bachata')}><FontAwesomeIcon icon={faMusic} /> Bachata</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#about" onClick={() => handleTabChange('about')}><FontAwesomeIcon icon={faInfoCircle} /> Qui sommes-nous ?</a></li>                    
-                </ul>
+                <Menu
+                    items={menuItems}
+                    onSelect={(e) => handleTabChange(e.item.data.tab)}
+                />
             </nav>
             {/* Header avec logo statique */}
             <header className="homepage-header">
@@ -85,15 +118,13 @@ const HomePage: React.FC = () => {
             </div>
             {/* Contenu affiché en fonction de l'onglet sélectionné */}
             <div className="tab-content">
-                {activeTab === 'fitandfun' && <FitAndFun />}
-                {activeTab === 'fitkids' && <FitKids />}
-                {activeTab === 'stretching' && <Stretching />}
-                {activeTab === 'twerk' && <Twerk />}
-                {activeTab === 'commercial' && <CommercialForm />}
-                {activeTab === 'danseurbaine' && <DanseUrbaineForm />}
-                {activeTab === 'cerceauaerien' && <CerceauAerienForm />}
-                {activeTab === 'heels' && <Heels />}
-                {activeTab === 'bachata' && <BachataForm />}
+                {activeTab === 'fitandfuncoach' && <FitAndFunCoach_Form />}
+                {activeTab === 'twerkcoach' && <TwerkCoach_Form />}
+                {activeTab === 'commercialcoach' && <CommercialCoach_Form />}
+                {activeTab === 'danseurbainecoach' && <DanseUrbaineCoach_Form />}
+                {activeTab === 'cerceauaeriencoach' && <CerceauAerienCoach_Form />}
+                {activeTab === 'heelscoach' && <HeelsCoach_Form />}
+                {activeTab === 'bachatacoach' && <BachataCoach_Form />}
                 {activeTab === 'about' && <AProposForm />}
                 {activeTab === 'home' && <HomeStudioGrisForm />}
                 {/* Ajoute d'autres onglets ici si nécessaire */}

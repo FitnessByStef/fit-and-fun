@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BachataForm: React.FC = () => {
+const BachataCoach_Form: React.FC = () => {
     return (
         <div className="bachataform">
             <h2 className="bachataformheader">Bachata</h2>
@@ -22,4 +22,4 @@ const BachataForm: React.FC = () => {
     );
 };
 
-export default BachataForm;
+export default BachataCoach_Form;

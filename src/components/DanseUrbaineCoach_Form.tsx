@@ -1,7 +1,7 @@
 import React from 'react';
 import CoachSarah from './medias/coachs/Sarah.jpg';
 
-const DanseUrbaineForm: React.FC = () => {
+const DanseUrbaineCoach_Form: React.FC = () => {
     return (
         <div className="danseurbaineform">
             <h2 className="danseurbaineformheader">💃 DANSE URBAINE 💃</h2>
@@ -37,4 +37,4 @@ Dans lequel chacun peut s’exprimer. (danse africaine, New school, pop, lock…
     );
 };
 
-export default DanseUrbaineForm;
+export default DanseUrbaineCoach_Form;

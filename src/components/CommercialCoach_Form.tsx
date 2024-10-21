@@ -1,7 +1,7 @@
 import React from 'react';
-import CoachJulia from './medias/coachs/Julia.jpg';
+import CoachSarah from './medias/coachs/Sarah.jpg';
 
-const CommercialForm: React.FC = () => {
+const CommercialCoach_Form: React.FC = () => {
     return (
         <div className="commercialform">
             <h2 className="commercialformheader">💃 COMMERCIAL 💃</h2>
@@ -9,13 +9,13 @@ const CommercialForm: React.FC = () => {
             {/* Section Features */}
             <section className="homepage-features">
                 <div className="feature-card" id="coach">
-                    <h3>Coach sportif : Julia</h3>
-                    <img src={CoachJulia} alt="CoachJulia" className="banner-image" />
+                    <h3>Coach sportif : Sarah</h3>
+                    <img src={CoachSarah} alt="CoachSarah" className="banner-image" />
                 </div>
                 <div className="feature-card" id="commercial">
                     <h3>Commercial</h3>
                     <p>
-                    Découvrez notre prof de Danse, Julia, qui enseignera le commercial au🏃💃STUDIO GRIS 💃🏃.
+                    Découvrez notre prof de Danse, Sarah, qui enseignera le commercial au🏃💃STUDIO GRIS 💃🏃.
 
 Elle allie simplicité et bonne humeur, rendant les cours puissants et originaux.🌸
 
@@ -28,4 +28,4 @@ Que vous soyez débutant ou confirmé chaque cours est une aventure. 😎
     );
 };
 
-export default CommercialForm;
+export default CommercialCoach_Form;

@@ -1,7 +1,7 @@
 import React from 'react';
 import CoachMaylisCerceau from './medias/coachs/MaylisCerceau.jpg';
 
-const CerceauAerienForm: React.FC = () => {
+const CerceauAerienCoach_Form: React.FC = () => {
     return (
         <div className="cerceauaerienform">
             <h2 className="cerceauaerienformheader">💃 CERCEAU AERIEN 💃</h2>
@@ -38,4 +38,4 @@ les routines peuvent inclure des rotations, des inversions, des balancements et 
     );
 };
 
-export default CerceauAerienForm;
+export default CerceauAerienCoach_Form;

@@ -1,7 +1,7 @@
 import React from 'react';
 import CoachDeborah from './medias/coachs/Deborah.jpg';
 
-const Heels: React.FC = () => {
+const HeelsCoach_Form: React.FC = () => {
     return (
         <div className="heelsform">
             <h2 className="heelsformheader">💃 HEELS 💃</h2>
@@ -43,4 +43,4 @@ Ainsi vous développer une attitude confiante, forte et féminine.😍🌸
     );
 };
 
-export default Heels;
+export default HeelsCoach_Form;
