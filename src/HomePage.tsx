@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { act, useState } from 'react';
 import './HomePage.css';
 import { Button } from '@progress/kendo-react-buttons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,6 +19,8 @@ import HomeStudioGrisForm from './components/HomeStudioGris';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'; // Import des icônes de réseaux sociaux
 import Chatbot from './components/ChatBot';
 import { Menu, MenuItemModel  } from '@progress/kendo-react-layout';
+import Planning_Form from './components/Planning_Form';
+import FitKids_Videos from './components/FitKids_Videos';
 
 
 const HomePage: React.FC = () => {
@@ -37,6 +39,7 @@ const HomePage: React.FC = () => {
                     text: 'Fit And Fun', data: { tab: 'fitandfun' },
                     items: [
                         { text: 'Les coachs', data: { tab: 'fitandfuncoach' } },
+                        { text: 'Fit Kids', data: { tab: 'fitkidsvideos' } },
                     ]
                 },
                 {
@@ -77,20 +80,21 @@ const HomePage: React.FC = () => {
                 }
             ]
         },
+        { text: 'Planning/Réservation', data: { tab: 'planning' } },
         { text: 'Qui sommes-nous ?', data: { tab: 'about' } },
     ];
     
     return (
         <div className="homepage-container">
-            <nav className="homepage-menu">
-                <Menu
-                    items={menuItems}
-                    onSelect={(e) => handleTabChange(e.item.data.tab)}
-                />
-            </nav>
-            {/* Header avec logo statique */}
-            <header className="homepage-header">
+             {/* Header avec logo statique */}
+             <header className="homepage-header">
                 <img src={logo} alt="Fitness" className="homepage-logo " />
+                <nav className="homepage-menu">
+                    <Menu
+                        items={menuItems}
+                        onSelect={(e) => handleTabChange(e.item.data.tab)}
+                    />
+                </nav>
                 <div className="social-media">
                     <p>Suivez-nous sur :</p>
                     <a href="https://www.facebook.com/profile.php?id=61559492342771" target="_blank" rel="noopener noreferrer" className="social-button">
@@ -102,7 +106,6 @@ const HomePage: React.FC = () => {
                 </div>
                 
             </header>
-            
             {/* Menu avec icônes et sous-menu */}
             
                 {/* Bandeau d'images défilantes */}
@@ -119,6 +122,7 @@ const HomePage: React.FC = () => {
             {/* Contenu affiché en fonction de l'onglet sélectionné */}
             <div className="tab-content">
                 {activeTab === 'fitandfuncoach' && <FitAndFunCoach_Form />}
+                {activeTab === 'fitkidsvideos' && <FitKids_Videos />}
                 {activeTab === 'twerkcoach' && <TwerkCoach_Form />}
                 {activeTab === 'commercialcoach' && <CommercialCoach_Form />}
                 {activeTab === 'danseurbainecoach' && <DanseUrbaineCoach_Form />}
@@ -127,12 +131,15 @@ const HomePage: React.FC = () => {
                 {activeTab === 'bachatacoach' && <BachataCoach_Form />}
                 {activeTab === 'about' && <AProposForm />}
                 {activeTab === 'home' && <HomeStudioGrisForm />}
+                {activeTab === 'planning' && <Planning_Form />}
                 {/* Ajoute d'autres onglets ici si nécessaire */}
             </div>
 
             {/* Call to Action */}
             <section className="homepage-cta">
-                <Button className="cta-button">Je veux commencer maintenant</Button>
+                <Button className="cta-button" onClick={() => {
+                    window.location.href = "https://studio-gris.sportigo.fr"; 
+                }}>Je veux commencer maintenant</Button>
                 <Button className="cta-button-secondary">En savoir plus</Button>
             </section>
 

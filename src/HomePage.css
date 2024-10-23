@@ -8,17 +8,24 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
+    background-color: #252122;
+    color: #fff;
 }
 
+/* Menu principal horizontal pour les grands écrans */
 .homepage-menu {
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 20px;
 }
 
 /* Style pour le menu Kendo */
 .k-menu {
-    background-color: #000;
+    background-color: #252122;
     color: #fff;
     font-size: 14px;
+    display: flex; /* Menu horizontal sur grands écrans */
+    gap: 1em;
 }
 
 .k-menu-item {
@@ -26,18 +33,17 @@ body {
     font-size: 13px;
     color: #fff;
     white-space: nowrap;
-    cursor: pointer; /* Curseur pointeur pour les items du menu */
+    cursor: pointer;
 }
 
 .k-menu-item .k-link {
     display: flex;
     align-items: center;
-    cursor: pointer; /* Curseur pointeur pour les liens dans les items du menu */
+    cursor: pointer;
 }
 
 .k-menu-item:hover {
     background-color: #ff007f;
-    cursor: pointer; /* Curseur pointeur lors du survol */
 }
 
 .k-menu-item.k-state-selected {
@@ -45,14 +51,15 @@ body {
 }
 
 .k-menu-popup {
-    background-color: #000;
+    background-color: #252122;
     color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Sous-menus */
 .k-menu-item .k-menu-group {
-    background-color: #000;
+    background-color: #252122;
+    color: #fff;
 }
 
 .k-menu-item .k-menu-group .k-menu-item {
@@ -61,25 +68,18 @@ body {
     font-size: 13px;
     color: #fff;
     white-space: nowrap;
-    cursor: pointer; /* Curseur pointeur pour les sous-menus */
+    cursor: pointer;
 }
 
 .k-menu-item .k-menu-group .k-menu-item:hover {
     background-color: #ff007f;
-    cursor: pointer; /* Curseur pointeur lors du survol des sous-menus */
 }
 
 .k-menu-item .k-menu-group .k-menu-item.k-state-selected {
     background-color: #ff66a3;
 }
 
-/* Ajustement de la taille des icônes */
-.k-icon {
-    font-size: 12px;
-    margin-right: 5px;
-}
-
-/* Logo et réseaux sociaux */
+/* Social media */
 .social-media {
     display: flex;
     align-items: center;
@@ -89,7 +89,8 @@ body {
 .social-media p {
     margin: 0;
     font-size: 1.1em;
-    color: #333;
+    background-color: #252122;
+    color: #fff;
 }
 
 .social-button {
@@ -100,7 +101,6 @@ body {
 
 .social-button:hover {
     color: #000;
-    cursor: pointer; /* Curseur pointeur sur les boutons de réseaux sociaux */
 }
 
 /* Header */
@@ -109,7 +109,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background-color: #fff;
+    background-color: #252122;
+    color: #fff;
 }
 
 .homepage-logo {
@@ -151,18 +152,21 @@ body {
     color: #fff;
     padding: 0.75em 2em;
     margin: 0.5em;
-    cursor: pointer;
     border: none;
-    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
 .cta-button:hover, .cta-button-secondary:hover {
     background-color: #000;
-    cursor: pointer; /* Curseur pointeur sur les boutons */
 }
 
-/* Mobile adjustments */
+/* Menu vertical pour les petits écrans */
 @media (max-width: 600px) {
+    .homepage-menu {
+        flex-direction: column; /* Menu devient vertical sur petits écrans */
+        align-items: flex-start;
+    }
+
     .slider {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -206,7 +210,6 @@ body {
 
 .chat-icon:hover {
     transform: scale(1.1);
-    cursor: pointer;
 }
 
 .chat-window {
@@ -249,5 +252,4 @@ body {
 
 .chat-window button:hover {
     background-color: #e6006b;
-    cursor: pointer; /* Curseur pointeur sur le bouton d'envoi */
 }
