@@ -2,6 +2,10 @@
   "name": "fit-and-fun",
   "version": "0.1.0",
   "private": true,
+  "resolutions": {
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.0.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
@@ -21,11 +25,14 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "ajv": "^8.17.1",
     "ajv-keywords": "^4.0.1",
     "emailjs-com": "^3.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-player": "^2.16.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
     "react-transition-group": "^4.4.5",

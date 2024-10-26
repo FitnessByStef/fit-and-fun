@@ -1,41 +1,23 @@
 import React from 'react';
-import CoachDeborah from './medias/coachs/Deborah.jpg';
 
 const HeelsCoach_Form: React.FC = () => {
     return (
         <div className="heelsform">
-            <h2 className="heelsformheader">💃 HEELS 💃</h2>
+            <h2 className="formheader">💃 <span className="feature-pinkname">HEELS</span> 💃</h2>
 
             {/* Section Features */}
             <section className="homepage-features">
                 <div className="feature-card" id="coach">
-                    <h3>Heels : Deborah</h3>
-                    <img src={CoachDeborah} alt="CoachDeborah" className="banner-image" />
+                    <img src={'/medias/coachs/Deborah.jpg'} alt="CoachDeborah" className="banner-image" />
                 </div>
                 <div className="feature-card" id="heels">
-                    <h3>Heels</h3>
                     <p>
-                    ✨ Découvrez notre troisième prof de Danse, Deborah, qui enseignera le Heels au 🏃💃STUDIO GRIS 💃🏃.
-
-
-Deborah, de part sa présence, rayonne l’élégance, la grâce et la douceur. 🌸
-
-Perchée sur ses talons, elle s’est donnée pour mission de vous enseigner sa version du heels, un mélange de danse classique et de gestuelle cabaret.⭐️
-
-Avec sa bienveillance, viens révéler la femme puissante qui sommeille en toi.🥰
-
-Que vous soyez débutant ou confirmé, vous vous sentirez dans votre élément 💋
-
-Le heels c’est quoi ?
-Le heels est une danse qui mélange plusieurs styles, offrant des performances revisités.
-
-En effet le heels est une danse qui incorpore son style dans toutes les chorégraphies sensuelles et rythmées. ✨
-
-Sa pratique vous apprend et vous encourage à vous aimer comme vous êtes. 😘
-
-Ainsi vous développer une attitude confiante, forte et féminine.😍🌸
-
-💌 Rejoignez notre communauté vibrante de danseurs !
+                    ✨ <span className="feature-pinkname">Déborah</span>, enseigne le Heels au 🏃💃STUDIO GRIS 💃🏃. 
+Avec sa douceur, elle incarne l'élégance et la grâce. 
+Dans ses cours, elle vous  propose une approche du Heels mêlant danse modern'jazz et gestuelle cabaret. 
+Sa bienveillance , vous permettra de révéler  la femme qui sommeille en vous. 
+Débutant ou confirmé, trouvez votre place dans cette danse qui célèbre la confiance et l’expression personnelle. 
+N’hésitez pas à rejoindre dès à présent ! 
                     </p>
                 </div>
             </section>

@@ -1,9 +1,8 @@
 import React from 'react';
-import Planning from './medias/cours/Planning.jpg';
 const Planning_Form: React.FC = () => {
     return (
         <div className="planningform">
-            <h2 className="planningformheader">🏋🏼‍♀️💃 PLANNING 💃🏋🏼‍♀️</h2>
+            <h2 className="formheader">🏋🏼‍♀️💃 <span className="feature-pinkname">PLANNING</span> 💃🏋🏼‍♀️</h2>
 
             {/* Section Features */}
             <section className="homepage-features">
@@ -15,7 +14,7 @@ const Planning_Form: React.FC = () => {
                             </p>
                         </div>
                     </h3>
-                    <img src={Planning} alt="Planning" className="banner-image" />
+                    <img src={'/medias/cours/Planning.jpg'} alt="Planning" className="banner-image" />
                 </div>
                 
                 

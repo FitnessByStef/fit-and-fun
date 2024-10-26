@@ -1,12 +1,7 @@
-import React, { act, useState } from 'react';
+import React, { useState } from 'react';
 import './HomePage.css';
 import { Button } from '@progress/kendo-react-buttons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo from './components/medias/logo/logo_studio_gris.jpg';
-import CardioBoxing from './components/medias/batiment/CardioBoxing_StudioGris.jpg';
-import Cerceaux_Aerien from './components/medias/batiment/Cerceaux_Aerien_StudioGris.jpg';
-import Plafond_StudioGris from './components/medias/batiment/Plafond_StudioGris.jpg';
-import CoinSalon from './components/medias/batiment/CoinSalon_StudioGris.jpg';
 import FitAndFunCoach_Form from './components/FitAndFunCoach_Form';
 import TwerkCoach_Form from './components/TwerkCoach_Form';
 import CommercialCoach_Form from './components/CommercialCoach_Form';
@@ -16,20 +11,22 @@ import HeelsCoach_Form from './components/HeelsCoach_Form';
 import BachataCoach_Form from './components/BachataForm';
 import AProposForm from './components/APropos';
 import HomeStudioGrisForm from './components/HomeStudioGris';
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'; // Import des icônes de réseaux sociaux
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Chatbot from './components/ChatBot';
-import { Menu, MenuItemModel  } from '@progress/kendo-react-layout';
+import { Menu, MenuItemModel } from '@progress/kendo-react-layout';
 import Planning_Form from './components/Planning_Form';
 import FitKids_Videos from './components/FitKids_Videos';
-
+import CardioBoxing_Videos from './components/CardioBoxingVideos';
+import Twerk_Videos from './components/Twerk_Videos';
+import HipHopCoach_Form from './components/HipHopForm';
 
 const HomePage: React.FC = () => {
-    const [activeTab, setActiveTab] = useState<string>('fitness'); // état pour gérer l'onglet actif
+    const [activeTab, setActiveTab] = useState<string>('home');
 
-    // Fonction pour gérer le changement d'onglet
     const handleTabChange = (tab: string) => {
         setActiveTab(tab);
     };
+
     const menuItems: MenuItemModel[] = [
         { text: 'Accueil', data: { tab: 'home' } },
         {
@@ -38,44 +35,52 @@ const HomePage: React.FC = () => {
                 {
                     text: 'Fit And Fun', data: { tab: 'fitandfun' },
                     items: [
-                        { text: 'Les coachs', data: { tab: 'fitandfuncoach' } },
+                        { text: 'Maylis & Stéphane', data: { tab: 'fitandfuncoach' } },
                         { text: 'Fit Kids', data: { tab: 'fitkidsvideos' } },
+                        { text: 'Cardio Boxing', data: { tab: 'cardioboxingvideos' } }
                     ]
                 },
                 {
                     text: 'Twerk', data: { tab: 'twerk' },
                     items: [
-                        { text: 'La coach', data: { tab: 'twerkcoach' } },
+                        { text: 'Maylis', data: { tab: 'twerkcoach' } },
+                        { text: 'Twerk', data: { tab: 'twerkvideos' } },
                     ]
                 },
                 {
                     text: 'Commercial', data: { tab: 'commercial' },
                     items: [
-                        { text: 'La coach', data: { tab: 'commercialcoach' } },
+                        { text: 'Sarah', data: { tab: 'commercialcoach' } },
+                    ]
+                },
+                {
+                    text: 'Hip-Hop', data: { tab: 'hiphop' },
+                    items: [
+                        { text: 'Julia', data: { tab: 'hiphopcoach' } },
                     ]
                 },
                 {
                     text: 'Danse Urbaine', data: { tab: 'danseurbaine' },
                     items: [
-                        { text: 'La coach', data: { tab: 'danseurbainecoach' } },
+                        { text: 'Sarah', data: { tab: 'danseurbainecoach' } },
                     ]
                 },
                 {
                     text: 'Cerceau Aérien', data: { tab: 'cerceauaerien' },
                     items: [
-                        { text: 'La coach', data: { tab: 'cerceauaeriencoach' } },
+                        { text: 'Maylis', data: { tab: 'cerceauaeriencoach' } },
                     ]
                 },
                 {
                     text: 'Heels', data: { tab: 'heels' },
                     items: [
-                        { text: 'La coach', data: { tab: 'heelscoach' } },
+                        { text: 'Déborah', data: { tab: 'heelscoach' } },
                     ]
                 },
                 {
                     text: 'Bachata', data: { tab: 'bachata' },
                     items: [
-                        { text: 'Le coach', data: { tab: 'bachatacoach' } },
+                        { text: 'Mickaël', data: { tab: 'bachatacoach' } },
                     ]
                 }
             ]
@@ -83,12 +88,11 @@ const HomePage: React.FC = () => {
         { text: 'Planning/Réservation', data: { tab: 'planning' } },
         { text: 'Qui sommes-nous ?', data: { tab: 'about' } },
     ];
-    
+
     return (
         <div className="homepage-container">
-             {/* Header avec logo statique */}
-             <header className="homepage-header">
-                <img src={logo} alt="Fitness" className="homepage-logo " />
+            <header className="homepage-header">
+                <img src={'/medias/logo/logo_studio_gris.jpg'} alt="Fitness" className="homepage-logo" />
                 <nav className="homepage-menu">
                     <Menu
                         items={menuItems}
@@ -104,46 +108,44 @@ const HomePage: React.FC = () => {
                         <FontAwesomeIcon icon={faInstagram} size="2x" />
                     </a>
                 </div>
-                
             </header>
-            {/* Menu avec icônes et sous-menu */}
-            
-                {/* Bandeau d'images défilantes */}
-                <div className="homepage-banner">
+
+            <div className="homepage-banner">
                 <div className="slider">
                     <div className="slides">
-                        <img src={CardioBoxing} alt="Fitness" className="banner-image" />
-                        <img src={Cerceaux_Aerien} alt="Nutrition" className="banner-image" />
-                        <img src={Plafond_StudioGris} alt="Bien-être" className="banner-image" />
-                        <img src={CoinSalon} alt="Danse" className="banner-image" />
+                        <img src={'/medias/batiment/CardioBoxing_StudioGris.jpg'} alt="Fitness" className="banner-image" />
+                        <img src={'/medias/batiment/Cerceaux_Aerien_StudioGris.jpg'} alt="Nutrition" className="banner-image" />
+                        <img src={'/medias/batiment/Plafond_StudioGris.jpg'} alt="Bien-être" className="banner-image" />
+                        <img src={'/medias/batiment/CoinSalon_StudioGris.jpg'} alt="Danse" className="banner-image" />
                     </div>
                 </div>
             </div>
-            {/* Contenu affiché en fonction de l'onglet sélectionné */}
+
             <div className="tab-content">
                 {activeTab === 'fitandfuncoach' && <FitAndFunCoach_Form />}
                 {activeTab === 'fitkidsvideos' && <FitKids_Videos />}
+                {activeTab === 'cardioboxingvideos' && <CardioBoxing_Videos />}
                 {activeTab === 'twerkcoach' && <TwerkCoach_Form />}
+                {activeTab === 'twerkvideos' && <Twerk_Videos />}
                 {activeTab === 'commercialcoach' && <CommercialCoach_Form />}
                 {activeTab === 'danseurbainecoach' && <DanseUrbaineCoach_Form />}
                 {activeTab === 'cerceauaeriencoach' && <CerceauAerienCoach_Form />}
+                {activeTab === 'hiphopcoach' && <HipHopCoach_Form />}
                 {activeTab === 'heelscoach' && <HeelsCoach_Form />}
                 {activeTab === 'bachatacoach' && <BachataCoach_Form />}
                 {activeTab === 'about' && <AProposForm />}
                 {activeTab === 'home' && <HomeStudioGrisForm />}
                 {activeTab === 'planning' && <Planning_Form />}
-                {/* Ajoute d'autres onglets ici si nécessaire */}
             </div>
 
-            {/* Call to Action */}
             <section className="homepage-cta">
                 <Button className="cta-button" onClick={() => {
-                    window.location.href = "https://studio-gris.sportigo.fr"; 
+                    window.location.href = "https://studio-gris.sportigo.fr";
                 }}>Je veux commencer maintenant</Button>
                 <Button className="cta-button-secondary">En savoir plus</Button>
             </section>
 
-            <Chatbot /> 
+            <Chatbot />
         </div>
     );
 };

@@ -4,6 +4,49 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.feature-pinkname{
+    color: #ff007f;
+    font-weight: bold;
+}
+
+.homepage-features-videos{
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.formheader{
+    text-align: center;
+}
+.feature-card h3 {
+    margin-bottom: 10px; /* Ajoute un espace en dessous du titre */
+}
+
+.feature-card {
+    display: block; /* Rend le contenu vertical */
+    text-align: center; /* Centre le texte et l'image */
+    padding: 20px; /* Ajoute un peu d'espace autour */
+}
+
+.feature-card p {
+    text-align: justify; /* Justifie le texte */
+    margin-top: 10px; /* Ajoute un espace au-dessus du texte de présentation */
+}
+
+.feature-card img {
+    max-height: 400px; /* Ajuste cette valeur selon les besoins */
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    max-height: 400px; /* Ajuste cette valeur selon les besoins */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Utilise 'cover' si tu veux remplir tout l'espace */
+    border-radius: 8px; /* Pour arrondir les coins, optionnel */
+}
+
+
 .homepage-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -27,7 +70,17 @@ body {
     display: flex; /* Menu horizontal sur grands écrans */
     gap: 1em;
 }
+.menu-open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
 
+.menu-closed {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
 .k-menu-item {
     padding: 5px 10px;
     font-size: 13px;

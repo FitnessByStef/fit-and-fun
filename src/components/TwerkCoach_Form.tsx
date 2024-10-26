@@ -1,25 +1,21 @@
 import React from 'react';
-import CoachMaylis from './medias/coachs/Maylis.jpg';
 
 const TwerkCoach_Form: React.FC = () => {
     return (
         <div className="twerkform">
-            <h2 className="twerkformheader">🍑 TWERK 🍑</h2>
+            <h2 className="formheader">🍑 <span className="feature-pinkname">TWERK</span> 🍑</h2>
 
             {/* Section Features */}
             <section className="homepage-features">
                 <div className="feature-card" id="coach">
-                    <h3>Coach sportif : Maylis</h3>
-                    <img src={CoachMaylis} alt="CoachStephane" className="banner-image" />
+                    <img src={'/medias/coachs/Maylis.jpg'} alt="CoachStephane" className="banner-image" />
                 </div>
                 <div className="feature-card" id="stretching">
-                    <h3>Twerk</h3>
                     <p>
-                    Découvrez notre prof de Danse, qui enseignera le Twerk au 🏃💃STUDIO GRIS 💃🏃.
-
-pour Maylis, le Twerk 🍑 est bien plus qu’une danse, c’est une de célébration de la féminité et de la liberté d’expression. 💋
-
-Maylis croit en l’importance de se sentir bien, elle utilise le Twerk comme un moyen de libération. 😍
+                    ✨ <span className="feature-pinkname">Maylis</span>, enseigne le Twerk au 🏃💃STUDIO GRIS 💃🏃! 
+Le twerk  est bien plus qu'une danse : c'est une explosion de féminité et une célébration totale de la liberté d’expression. 
+Maylis est là pour vous faire vibrer, vous libérer, et vous aider à vous sentir bien dans votre corps. Avec elle, chaque cours est un shot de confiance et de fun pur. 
+Prêt.e à tout donner et à lâcher prise ? Rejoignez-nous ! 
                     </p>
                 </div>
             </section>

@@ -1,19 +1,17 @@
 import React from 'react';
-import StudioGris from './medias/batiment/Salle_StudioGris.jpg';
 
 const HomeStudioGrisForm: React.FC = () => {
     return (
         <div className="aproposform">
-            <h2 className="aproposformheader">💃 QUI SOMMES NOUS 💃</h2>
+            <h2 className="formheader">💃 <span className="feature-pinkname">ACCUEIL</span> 💃</h2>
 
             {/* Section Features */}
             <section className="homepage-features">
                 <div className="feature-card" id="coach">
-                    <h3>Accueil</h3>
-                    <img src={StudioGris} alt="StudioGris" className="banner-image" />
+                    <img src={'/medias/batiment/Salle_StudioGris.jpg'} alt="StudioGris" className="banner-image" />
                 </div>
                 <div className="feature-card" id="commercial">
-                    <h3>Le Studio Gris</h3>
+                    <h3><span className="feature-pinkname">Le Studio Gris</span></h3>
                     <p>
                     Notre studio climatisé de 150m2, avec une hauteur sous plafond de 6 mètres, offre un cadre unique. Le plafond étoilé crée une ambiance idéale pour vos séances de stretching et de relaxation.
                     <br /><br />
