@@ -2,7 +2,7 @@ import React from 'react';
 const Planning_Form: React.FC = () => {
     return (
         <div className="planningform">
-            <h2 className="formheader">🏋🏼‍♀️💃 <span className="feature-pinkname">PLANNING</span> 💃🏋🏼‍♀️</h2>
+            <h2 className="formheader"><span className="feature-pinkname">PLANNING</span></h2>
 
             {/* Section Features */}
             <section className="homepage-features">

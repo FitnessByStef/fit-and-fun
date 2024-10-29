@@ -3,13 +3,14 @@ import React from 'react';
 const HomeStudioGrisForm: React.FC = () => {
     return (
         <div className="aproposform">
-            <h2 className="formheader">💃 <span className="feature-pinkname">ACCUEIL</span> 💃</h2>
+            <h2 className="formheader"><span className="feature-pinkname">ACCUEIL</span></h2>
 
             {/* Section Features */}
             <section className="homepage-features">
-                <div className="feature-card" id="coach">
-                    <img src={'/medias/batiment/Salle_StudioGris.jpg'} alt="StudioGris" className="banner-image" />
-                </div>
+                
+                <div className="feature-card">
+                    <img src={'/medias/batiment/Escalier_StudioGris.jpg'} alt="StudioGris" className="banner-image" />
+                    </div>
                 <div className="feature-card" id="commercial">
                     <h3><span className="feature-pinkname">Le Studio Gris</span></h3>
                     <p>

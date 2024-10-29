@@ -4,49 +4,55 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.feature-pinkname{
+.feature-pinkname {
     color: #ff007f;
     font-weight: bold;
 }
 
-.homepage-features-videos{
+.homepage-features-videos {
     align-content: center;
     justify-content: center;
     text-align: center;
 }
 
-.formheader{
+.formheader {
     text-align: center;
 }
-.feature-card h3 {
-    margin-bottom: 10px; /* Ajoute un espace en dessous du titre */
+
+.carousel-title {
+    color: #ff007f;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 .feature-card {
-    display: block; /* Rend le contenu vertical */
-    text-align: center; /* Centre le texte et l'image */
-    padding: 20px; /* Ajoute un peu d'espace autour */
+    max-height: 400px;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    padding: 20px;
 }
 
 .feature-card p {
-    text-align: justify; /* Justifie le texte */
-    margin-top: 10px; /* Ajoute un espace au-dessus du texte de présentation */
+    text-align: justify;
+    margin-top: 10px;
 }
 
 .feature-card img {
-    max-height: 400px; /* Ajuste cette valeur selon les besoins */
+    margin: 10px;
+    max-height: 400px;
     align-content: center;
     justify-content: center;
     text-align: center;
     max-width: 100%;
-    max-height: 400px; /* Ajuste cette valeur selon les besoins */
-    width: auto;
-    height: auto;
-    object-fit: contain; /* Utilise 'cover' si tu veux remplir tout l'espace */
-    border-radius: 8px; /* Pour arrondir les coins, optionnel */
+    object-fit: contain;
+    border-radius: 8px;
 }
 
-
+/* Conteneur général */
 .homepage-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -55,81 +61,217 @@ body {
     color: #fff;
 }
 
-/* Menu principal horizontal pour les grands écrans */
-.homepage-menu {
+/* Header */
+.homepage-header {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-/* Style pour le menu Kendo */
-.k-menu {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
     background-color: #252122;
     color: #fff;
-    font-size: 14px;
-    display: flex; /* Menu horizontal sur grands écrans */
-    gap: 1em;
-}
-.menu-open {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    position: relative;
 }
 
-.menu-closed {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-.k-menu-item {
-    padding: 5px 10px;
-    font-size: 13px;
-    color: #fff;
-    white-space: nowrap;
-    cursor: pointer;
+.logo-toggle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.k-menu-item .k-link {
+.homepage-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.menu-wrapper {
     display: flex;
     align-items: center;
-    cursor: pointer;
+    margin-left: 10px;
+    position: relative; /* Nécessaire pour que le menu-content soit positionné par rapport à ce conteneur */
+    z-index: 10; /* Assure l'affichage au-dessus des autres éléments */
 }
 
-.k-menu-item:hover {
+.menu-toggle {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #ff007f;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #252122;
+    color: #fff;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    margin-top: 5px;
+}
+
+/* Menu items */
+.menu-item {
+    padding: 10px;
+    font-size: 1em;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    color: #fff;
+}
+
+.menu-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.highlight-text {
+    color: inherit;
+}
+
+.chevron-icon {
+    color: #ff007f;
+}
+
+.sub-menu {
+    padding-left: 20px;
+    margin-top: 5px;
+    background-color: #353535;
+    border-left: 2px solid #ff007f;
+}
+.social-button {
+    color: #ff007f;
+    transition: color 0.3s ease;
+}
+.menu-item:hover .highlight-text {
+    color: #ff007f;
+}
+
+/* Définir les couleurs par défaut */
+.menu-item, .sub-menu .menu-item {
+    color: #fff;
+    background-color: transparent;
+}
+
+/* Applique le rose uniquement à l'élément actuel sous le curseur, quel que soit le niveau */
+.menu-item:hover > .menu-title > .highlight-text,
+.sub-menu .menu-item:hover > .menu-title > .highlight-text {
+    color: #ff007f; /* Applique la couleur rose seulement au texte sous le curseur */
+}
+
+/* Garde les éléments parents et frères en blanc lors du survol */
+.menu-item:hover > .sub-menu .menu-item .highlight-text,
+.sub-menu .menu-item:hover .highlight-text,
+.menu-item .sub-menu .menu-item:hover .highlight-text {
+    color: #fff; /* Assure que seuls les éléments sous le curseur soient colorés */
+}
+
+/* Suppression de l'effet de propagation de fond pour un effet plus subtil */
+.menu-item:hover,
+.sub-menu .menu-item:hover {
+    background-color: transparent; /* Maintient la transparence du fond au survol */
+}
+
+/* Styles généraux du menu */
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #252122;
+    color: #fff;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding-top: 60px;
+    z-index: 1000;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+
+
+.mobile-menu .k-menu-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #444;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.mobile-menu .k-menu-item:hover {
     background-color: #ff007f;
 }
 
-.k-menu-item.k-state-selected {
-    background-color: #ff66a3;
+.mobile-menu .k-menu-group {
+    background-color: #353535;
+    padding-left: 20px;
+    display: none;
+    border-top: 1px solid #444;
 }
 
-.k-menu-popup {
-    background-color: #252122;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Styles spécifiques pour ouvrir les sous-menus et sous-sous-menus */
+.mobile-menu .k-menu-item.k-state-focused > .k-menu-group,
+.mobile-menu .k-menu-item.k-state-selected > .k-menu-group {
+    display: block; /* Affiche le sous-menu à l'état actif */
 }
 
-/* Sous-menus */
-.k-menu-item .k-menu-group {
-    background-color: #252122;
-    color: #fff;
-}
-
-.k-menu-item .k-menu-group .k-menu-item {
-    padding: 5px 10px;
-    background-color: #000;
-    font-size: 13px;
-    color: #fff;
-    white-space: nowrap;
+.mobile-menu .k-menu-group .k-menu-item {
+    padding: 10px 20px;
+    border-top: 1px solid #444;
     cursor: pointer;
 }
 
-.k-menu-item .k-menu-group .k-menu-item:hover {
+.mobile-menu .k-menu-group .k-menu-item:hover {
     background-color: #ff007f;
 }
 
-.k-menu-item .k-menu-group .k-menu-item.k-state-selected {
-    background-color: #ff66a3;
+/* Suppression des grosses flèches */
+.mobile-menu .k-menu-expand-arrow {
+    display: none; /* Supprime les flèches d'extension des sous-menus */
+}
+
+.homepage-menu {
+    display: none;
+}
+
+/* Cacher l'icône sur les écrans plus grands */
+@media (min-width: 800px) {
+    .mobile-menu {
+        display: block;
+    }
+}
+
+/* Positionnement du sous-sous-menu à droite du sous-menu */
+.mobile-menu .k-menu-group .k-menu-group {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Décalage à droite du sous-menu parent */
+    margin-left: 5px;
+    background-color: #444;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+/* Affichage du sous-sous-menu lors du survol */
+.mobile-menu .k-menu-item.k-state-focused > .k-menu-group,
+.mobile-menu .k-menu-item.k-state-selected > .k-menu-group,
+.mobile-menu .k-menu-group .k-menu-item.k-state-focused > .k-menu-group,
+.mobile-menu .k-menu-group .k-menu-item.k-state-selected > .k-menu-group {
+    display: block;
 }
 
 /* Social media */
@@ -153,7 +295,7 @@ body {
 }
 
 .social-button:hover {
-    color: #000;
+    color: #fff;;
 }
 
 /* Header */
@@ -200,7 +342,8 @@ body {
     margin: 2em 0;
 }
 
-.cta-button, .cta-button-secondary {
+.cta-button,
+.cta-button-secondary {
     background-color: #ff007f;
     color: #fff;
     padding: 0.75em 2em;
@@ -209,39 +352,9 @@ body {
     cursor: pointer;
 }
 
-.cta-button:hover, .cta-button-secondary:hover {
-    background-color: #000;
-}
-
-/* Menu vertical pour les petits écrans */
-@media (max-width: 600px) {
-    .homepage-menu {
-        flex-direction: column; /* Menu devient vertical sur petits écrans */
-        align-items: flex-start;
-    }
-
-    .slider {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .homepage-header {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .homepage-logo {
-        width: 100px;
-        height: auto;
-    }
-
-    .homepage-banner {
-        margin-bottom: 20px;
-    }
-
-    .homepage-cta {
-        text-align: center;
-    }
+.cta-button:hover,
+.cta-button-secondary:hover {
+    background-color: #252122;
 }
 
 /* Chatbot styles */

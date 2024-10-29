@@ -1,0 +1,90 @@
+/* PaymentForm.css */
+.payment-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #252122; /* Fond foncé pour correspondre au design du site */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #fff; /* Texte en blanc */
+}
+
+.payment-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff; /* Couleur du texte en blanc */
+}
+
+.payment-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-form label {
+    text-align: left;
+    font-weight: bold;
+    color: #fff; /* Texte en blanc pour les labels */
+}
+
+.payment-form input,
+.payment-form .StripeElement {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #444; /* Bordure en couleur foncée */
+    border-radius: 5px;
+    background-color: #333; /* Fond des champs en couleur foncée */
+    color: #fff; /* Texte en blanc */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.payment-form input::placeholder {
+    color: #bbb; /* Couleur plus claire pour les placeholders */
+}
+
+.payment-form button {
+    background-color: #ff007f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-form button:hover {
+    background-color: #e6006b;
+}
+
+.payment-form .previous-button {
+    background-color: #555;
+    margin-right: 10px;
+}
+
+.payment-form .previous-button:hover {
+    background-color: #333;
+}
+
+.payment-form .message {
+    margin-top: 20px;
+    text-align: center;
+    color: #00ff00; /* Message de succès en vert clair */
+}
+
+.payment-form .error {
+    color: #ff4444; /* Message d'erreur en rouge clair */
+}
+
+/* Ajoutez une classe pour le conteneur des boutons */
+.payment-form .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Ajoute un espace entre les boutons */
+}
+
+.payment-form button {
+    flex: 1; /* Permet aux boutons de prendre la même largeur */
+}

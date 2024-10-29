@@ -21,8 +21,8 @@ const CarrouselVidéos: React.FC<IProps> = (props : IProps) => {
     };
     console.log("videos",props.videos);
     return (
-        <div className="fitandfunform">
-        <h2 className="fitandfunformheader">{props.title}</h2>
+        <div className="carousel-container">
+        <h2 className="carousel-title">{props.title}</h2>
         <section className="homepage-features-videos">
             <div className="feature-card" id="coach">
             <Slider {...settings}>

@@ -9,7 +9,7 @@ const FitKids_Vidéos: React.FC = () => {
     { id: 2, src: '/medias/videos/fitkids/Fitkids_02.mp4', title: 'Video 2' },
     { id: 3, src: '/medias/videos/fitkids/Fitkids_03.mp4', title: 'Video 3' },
   ];
-  return <CarrouselVidéos videos={videos} title='🏋🏼‍♀️ FIT KIDS 🏋🏼‍♀️' />
+  return <CarrouselVidéos videos={videos} title=' FIT KIDS ' />
 };
 
 export default FitKids_Vidéos;

@@ -22,6 +22,8 @@
     "@progress/kendo-react-popup": "^8.4.0",
     "@progress/kendo-react-progressbars": "^8.5.0",
     "@progress/kendo-svg-icons": "^3.1.0",
+    "@stripe/react-stripe-js": "^2.8.1",
+    "@stripe/stripe-js": "^4.9.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -32,6 +34,7 @@
     "emailjs-com": "^3.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-modal": "^3.16.1",
     "react-player": "^2.16.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
@@ -67,6 +70,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-modal": "^3.16.3",
     "@types/react-slick": "^0.23.13",
     "gh-pages": "^6.2.0"
   },
