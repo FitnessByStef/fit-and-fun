@@ -13,11 +13,11 @@ const HeelsCoach_Form: React.FC = () => {
                 <div className="feature-card" id="heels">
                     <p>
                     ✨ <span className="feature-pinkname">Déborah</span>, enseigne le Heels au STUDIO <span className="feature-pinkname">GRIS</span>. 
-Avec sa douceur, elle incarne l'élégance et la grâce. 
-Dans ses cours, elle vous  propose une approche du Heels mêlant danse modern'jazz et gestuelle cabaret. 
-Sa bienveillance , vous permettra de révéler  la femme qui sommeille en vous. 
-Débutant ou confirmé, trouvez votre place dans cette danse qui célèbre la confiance et l’expression personnelle. 
-N’hésitez pas à rejoindre dès à présent ! 
+<br /><br />Avec sa douceur, elle incarne l'élégance et la grâce. 
+<br /><br />Dans ses cours, elle vous  propose une approche du Heels mêlant danse modern'jazz et gestuelle cabaret. 
+<br /><br />Sa bienveillance , vous permettra de révéler  la femme qui sommeille en vous. 
+<br /><br />Débutant ou confirmé, trouvez votre place dans cette danse qui célèbre la confiance et l’expression personnelle. 
+<br /><br /><span className="feature-pinkname">N’hésitez pas à nous rejoindre dès à présent ! </span>
                     </p>
                 </div>
             </section>

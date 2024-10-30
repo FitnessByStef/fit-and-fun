@@ -13,9 +13,9 @@ const HipHopCoach_Form: React.FC = () => {
                 <div className="feature-card" id="hiphop">
                     <p>
                     ✨ <span className="feature-pinkname">Julia</span>, enseigne le hip-hop au STUDIO <span className="feature-pinkname">GRIS</span>. 
-Avec son énergie captivante et son style raffiné arriver tout droit des USA, elle transforme chaque cours en un moment unique, alliant technique et plaisir. 
-Que vous soyez novice ou expérimenté, laissez-vous emporter par le rythme et l’élance du moment avec Julia. 
-Ne perdez plus de temps, rejoignez nous !
+<br /><br />Avec son énergie captivante et son style raffiné arriver tout droit des USA, elle transforme chaque cours en un moment unique, alliant technique et plaisir. 
+<br /><br />Que vous soyez novice ou expérimenté, laissez-vous emporter par le rythme et l’élance du moment avec Julia. 
+<br /><br />Ne perdez plus de temps, <span className="feature-pinkname">rejoignez nous !</span>
                     </p>
                 </div>
             </section>

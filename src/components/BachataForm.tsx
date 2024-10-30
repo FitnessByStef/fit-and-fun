@@ -13,8 +13,9 @@ const BachataCoach_Form: React.FC = () => {
                 <div className="feature-card" id="bachata">
                     <p>
                     ✨ <span className="feature-pinkname">Mickaël</span>, enseigne la Bachata au STUDIO <span className="feature-pinkname">GRIS</span>. 
-Son style est un parfait mélange de technique et de passion, vous guidant à chaque pas pour que vous ressentiez la musique et la connexion unique qu'offre la Bachata. 
-Que vous soyez débutant ou danseur confirmé, laissez-vous entraîner par son énergie et sa bienveillance pour vivre pleinement l'âme de la Bachata. Rejoignez-nous dès à présent ! 
+<br /><br />Son style est un parfait mélange de technique et de passion, vous guidant à chaque pas pour que vous ressentiez la musique et la connexion unique qu'offre la Bachata. 
+<br /><br />Que vous soyez débutant ou danseur confirmé, laissez-vous entraîner par son énergie et sa bienveillance pour vivre pleinement l'âme de la Bachata. 
+<br /><br /><span className="feature-pinkname">Rejoignez-nous dès à présent ! </span>
                     </p>
                 </div>
             </section>

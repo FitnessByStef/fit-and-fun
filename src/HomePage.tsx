@@ -23,6 +23,7 @@ import HipHop_Videos from './components/HipHop_Videos';
 import DanseUrbaine_Videos from './components/DanseUrbaine_Videos';
 import Heels_Videos from './components/Heels_Videos';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import ContactForm from './components/Contact';
 
 interface IProps {
     onOpenPaymentModal: () => void;
@@ -191,6 +192,7 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                         {renderMenuItems(menuItems)}
                     </div>
                 )}
+                <div className="header-title">STUDIO DE DANSES ET DE SPORTS</div>
                 <div className="social-media">
                     <p>Suivez-nous sur :</p>
                     <a href="https://www.facebook.com/profile.php?id=61559492342771" target="_blank" rel="noopener noreferrer" className="social-button">
@@ -231,6 +233,7 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                 {activeTab === 'about' && <AProposForm />}
                 {activeTab === 'home' && <HomeStudioGrisForm />}
                 {activeTab === 'planning' && <Planning_Form />}
+                {activeTab === 'contact' && <ContactForm />}
                 {activeTab === 'bodymindsuccess' && <BodyMindSuccessPrg_Form onOpenPaymentModal={props.onOpenPaymentModal} handleAmount={props.handleAmount} />}
             </div>
 
@@ -238,7 +241,7 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                 <Button className="cta-button" onClick={() => window.location.href = "https://studio-gris.sportigo.fr"}>
                     Je veux commencer maintenant
                 </Button>
-                <Button className="cta-button-secondary">En savoir plus</Button>
+                <Button className="cta-button-secondary" onClick={() => setActiveTab('contact')}>Contact</Button>
             </section>
 
             <Chatbot />

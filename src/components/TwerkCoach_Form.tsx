@@ -13,9 +13,9 @@ const TwerkCoach_Form: React.FC = () => {
                 <div className="feature-card" id="stretching">
                     <p>
                     ✨ <span className="feature-pinkname">Maylis</span>, enseigne le Twerk au STUDIO <span className="feature-pinkname">GRIS</span> ! 
-Le twerk  est bien plus qu'une danse : c'est une explosion de féminité et une célébration totale de la liberté d’expression. 
-Maylis est là pour vous faire vibrer, vous libérer, et vous aider à vous sentir bien dans votre corps. Avec elle, chaque cours est un shot de confiance et de fun pur. 
-Prêt.e à tout donner et à lâcher prise ? Rejoignez-nous ! 
+<br /><br />Le twerk  est bien plus qu'une danse : c'est une explosion de féminité et une célébration totale de la liberté d’expression. 
+<br /><br />Maylis est là pour vous faire vibrer, vous libérer, et vous aider à vous sentir bien dans votre corps. Avec elle, chaque cours est un shot de confiance et de fun pur. 
+<br /><br />Prêt.e à tout donner et à lâcher prise ? <span className="feature-pinkname">Rejoignez-nous ! </span>
                     </p>
                 </div>
             </section>

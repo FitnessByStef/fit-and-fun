@@ -12,10 +12,10 @@ const DanseUrbaineCoach_Form: React.FC = () => {
                 </div>
                 <div className="feature-card" id="danseurbaine">
                     <p>
-                    ✨<span className="feature-pinkname">Sarah</span>, enseigne le commercial et la danse urbaine  au STUDIO <span className="feature-pinkname">GRIS</span> ! 
-Avec son énergie lumineuse et sa simplicité, elle transforme chaque cours en un moment unique, puissant et joyeux.
-Que vous soyez débutant ou expérimenté, chaque session avec elle devient une aventure inspirante. 
-Rejoignez notre communauté dynamique de danseurs passionnés, dès maintenant ! 
+                    ✨ <span className="feature-pinkname">Sarah</span>, enseigne le commercial et la danse urbaine  au STUDIO <span className="feature-pinkname">GRIS</span> ! 
+<br /><br />Avec son énergie lumineuse et sa simplicité, elle transforme chaque cours en un moment unique, puissant et joyeux.
+<br /><br />Que vous soyez débutant ou expérimenté, chaque session avec elle devient une aventure inspirante. 
+<br /><br /><span className="feature-pinkname">Rejoignez notre communauté dynamique de danseurs passionnés, dès maintenant ! </span> 
                     </p>
                 </div>
             </section>

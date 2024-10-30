@@ -13,14 +13,10 @@ const CerceauAerienCoach_Form: React.FC = () => {
                 <div className="feature-card" id="cerceauaerien">
                     <p>
                     ✨<span className="feature-pinkname">Maylis</span> enseigne le Cerceau Aérien au STUDIO <span className="feature-pinkname">GRIS</span>.
-
-Maylis est une fanatique du Cerceau aérien, elle combine technique, créativité et âme attitude enjouée pour offrir une expérience d’apprentissage unique et inspirante.🌪️
-
-Chaque cours avec Maylis est une aventure aérienne, cette passionnée, enseigne de manière accessible et sécurisé. Elle te montrera comment utiliser cette discipline pour t’exprimer et te sentir libre.
-
-Adultes ou enfants, débutant ou confirmé elle vous transmettra sa passion aérienne
-
-Accessible à partir de 5 ans ☺️
+<br /><br />Maylis est une fanatique du Cerceau aérien, elle combine technique, créativité et âme attitude enjouée pour offrir une expérience d’apprentissage unique et inspirante.
+<br /><br />Chaque cours avec Maylis est une aventure aérienne, cette passionnée, enseigne de manière accessible et sécurisé. Elle te montrera comment utiliser cette discipline pour t’exprimer et te sentir libre.
+<br /><br />Adultes ou enfants, débutant ou confirmé elle vous transmettra sa passion aérienne
+<br /><br /><span className="feature-pinkname">Ne perdez plus de temps, Rejoignez-nous !</span> 
                     </p>
                 </div>
             </section>
