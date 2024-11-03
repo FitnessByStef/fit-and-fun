@@ -64,6 +64,7 @@ body {
     padding: 0;
     background-color: #252122;
     color: #fff;
+    padding-top: 1px; /* Moins de padding pour les petits écrans */
 }
 
 /* Header */
@@ -75,6 +76,14 @@ body {
     background-color: #252122;
     color: #fff;
     position: relative;
+    position: fixed; /* Rend le header fixe */
+    top: 0; /* Le place en haut */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1168px;
+    width: 100%; /* Assure que le header occupe toute la largeur */
+    z-index: 1000; /* Le place au-dessus des autres éléments */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel, ajoute une ombre légère */
 }
 
 .logo-toggle-wrapper {
@@ -253,9 +262,15 @@ body {
 }
 
 /* Cacher l'icône sur les écrans plus grands */
-@media (min-width: 800px) {
+@media (min-width:768px) {
     .mobile-menu {
         display: block;
+    }
+    
+    
+    .homepage-header {
+        padding:1em;
+        width: 100%; /* Laisse le header prendre toute la largeur sur mobile */
     }
 }
 
@@ -303,16 +318,6 @@ body {
     color: #fff;;
 }
 
-/* Header */
-.homepage-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em;
-    background-color: #252122;
-    color: #fff;
-}
-
 .homepage-logo {
     width: 150px;
     height: auto;
@@ -321,6 +326,7 @@ body {
 /* Bannière */
 .homepage-banner {
     margin-bottom: 20px;
+    margin-top: 225px;
 }
 
 .slider {
