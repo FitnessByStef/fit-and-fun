@@ -194,7 +194,6 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                 )}
                 <div className="header-title">STUDIO DE DANSES ET DE SPORTS</div>
                 <div className="social-media">
-                    <p>Suivez-nous sur :</p>
                     <a href="https://www.facebook.com/profile.php?id=61559492342771" target="_blank" rel="noopener noreferrer" className="social-button">
                         <FontAwesomeIcon icon={faFacebook} size="2x" />
                     </a>
@@ -237,12 +236,12 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                 {activeTab === 'bodymindsuccess' && <BodyMindSuccessPrg_Form onOpenPaymentModal={props.onOpenPaymentModal} handleAmount={props.handleAmount} />}
             </div>
 
-            <section className="homepage-cta">
+            <div className="homepage-cta">
                 <Button className="cta-button" onClick={() => window.location.href = "https://studio-gris.sportigo.fr"}>
                     Je veux commencer maintenant
                 </Button>
                 <Button className="cta-button-secondary" onClick={() => setActiveTab('contact')}>Contact</Button>
-            </section>
+            </div>
 
             <Chatbot />
         </div>

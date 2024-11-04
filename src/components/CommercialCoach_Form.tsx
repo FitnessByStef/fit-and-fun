@@ -7,7 +7,7 @@ const CommercialCoach_Form: React.FC = () => {
 
             {/* Section Features */}
             <section className="homepage-features">
-                <div className="feature-card" id="coach">
+                <div className="feature-card" id="commercial">
                     <img src={'/medias/coachs/SarahCommercial.png'} alt="CoachSarah" className="banner-image" />
                 </div>
                 <div className="feature-card" id="commercial">

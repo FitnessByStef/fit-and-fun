@@ -1,4 +1,8 @@
 /* Styles généraux */
+@font-face {
+    font-family: 'Chandstate';
+    src: url('charte/Chandstate.otf') format('opentype');
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -7,10 +11,18 @@ body {
 .header-title{
     color: #ffffff;
     font-size:large;
+    font-family: Chandstate, sans-serif;
 }
 
 .feature-pinkname {
     color: #ff007f;
+    font-weight: bold;
+}
+
+.feature-pinkname-title {
+    color: #ff007f;
+    font-size:x-large;
+    font-family: Chandstate, sans-serif;
     font-weight: bold;
 }
 
@@ -39,11 +51,20 @@ body {
     display: block;
     text-align: center;
     padding: 20px;
+    z-index: 1;
+    margin-bottom: 10px;
+    
 }
 
 .feature-card p {
     text-align: justify;
     margin-top: 10px;
+    
+}
+
+.feature-card-center {
+    align-items: center;
+    text-align: center;
 }
 
 .feature-card img {
@@ -65,6 +86,8 @@ body {
     background-color: #252122;
     color: #fff;
     padding-top: 1px; /* Moins de padding pour les petits écrans */
+    
+    gap: 20px; /* Ajoutez un écart entre les sections */
 }
 
 /* Header */
@@ -118,6 +141,7 @@ body {
 .menu-content {
     display: flex;
     flex-direction: column;
+    font-family: Chandstate, sans-serif;
     background-color: #252122;
     color: #fff;
     padding: 10px;
@@ -266,8 +290,6 @@ body {
     .mobile-menu {
         display: block;
     }
-    
-    
     .homepage-header {
         padding:1em;
         width: 100%; /* Laisse le header prendre toute la largeur sur mobile */
@@ -349,8 +371,10 @@ body {
 
 /* Call to action */
 .homepage-cta {
-    text-align: center;
+    position: relative;
     margin: 2em 0;
+    z-index: 1;
+    
 }
 
 .cta-button,
@@ -361,6 +385,7 @@ body {
     margin: 0.5em;
     border: none;
     cursor: pointer;
+    
 }
 
 .cta-button:hover,

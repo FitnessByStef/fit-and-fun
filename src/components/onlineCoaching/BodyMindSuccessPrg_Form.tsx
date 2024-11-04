@@ -9,7 +9,7 @@ interface IProps {
 const BodyMindSuccessPrg_Form: React.FC<IProps> = (props:IProps) => {
     return (
         <div className="weightlossform">
-            <h2 className="formheader">🏋🏼‍♀️ <span className="feature-pinkname">Mon coaching sur mesure</span></h2>
+            <h2 className="formheader"><span className="feature-pinkname">Mon coaching sur mesure</span></h2>
 
             {/* Section Features */}
             <section className="homepage-features">

@@ -1,5 +1,8 @@
 import './CarrouselStudioGris.css';
 import CarrouselImg from './CarrouselImg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faContactCard } from '@fortawesome/free-solid-svg-icons';
 
 const ContactForm: React.FC = () => {
     
@@ -19,9 +22,26 @@ const ContactForm: React.FC = () => {
 
             {/* Section Features */}
             <section className="homepage-features">
+                
                 <CarrouselImg images={images} />
-                </section>
+                
+                <div className="feature-card-center" id="contact">
+                    <p>
+                    <span className="feature-pinkname-title">LE STUDIO GRIS</span>
+                        <br />
+                        <br />9 route de Lalonquette
+                        <br />
+                        64450 THEZE
+                        <br />
+                        <br />
+                        <FontAwesomeIcon icon={faWhatsapp} size="2x" /> 07 81 57 76 73
+                        <br />
+                        <br />
+                        <FontAwesomeIcon icon={faContactCard} size="2x" /> lafuente.sante@gmail.com
+                    </p>
                 </div>
+            </section>
+        </div>
     );
 }
 export default ContactForm;
