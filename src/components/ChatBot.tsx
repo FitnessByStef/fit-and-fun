@@ -15,9 +15,9 @@ const Chatbot: React.FC = () => {
     const sendMessage = (e: React.FormEvent) => {
         e.preventDefault();
         if (message && email) {
-            const serviceID = 'your_service_id';
-            const templateID = 'your_template_id';
-            const userID = 'your_user_id'; // Récupéré depuis EmailJS
+            const serviceID = 'service_lafuente.sante';
+            const templateID = 'template_ri2ova2';
+            const userID = 'gJWMor4mNkpxe8-y_'; // Récupéré depuis EmailJS
 
             emailjs.send(serviceID, templateID, { message, email }, userID)
                 .then(() => {
