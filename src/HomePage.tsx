@@ -5,25 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FitAndFunCoach_Form from './components/FitAndFunCoach_Form';
 import TwerkCoach_Form from './components/TwerkCoach_Form';
 import CommercialCoach_Form from './components/CommercialCoach_Form';
-import DanseUrbaineCoach_Form from './components/DanseUrbaineCoach_Form';
 import CerceauAerienCoach_Form from './components/CerceauAerienCoach_Form';
 import HeelsCoach_Form from './components/HeelsCoach_Form';
-import BachataCoach_Form from './components/BachataForm';
 import AProposForm from './components/APropos';
 import HomeStudioGrisForm from './components/HomeStudioGris';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Chatbot from './components/ChatBot';
 import Planning_Form from './components/Planning_Form';
-import FitKids_Videos from './components/FitKids_Videos';
 import CardioBoxing_Videos from './components/CardioBoxingVideos';
 import Twerk_Videos from './components/Twerk_Videos';
-import HipHopCoach_Form from './components/HipHopForm';
-import BodyMindSuccessPrg_Form from './components/onlineCoaching/BodyMindSuccessPrg_Form';
-import HipHop_Videos from './components/HipHop_Videos';
-import DanseUrbaine_Videos from './components/DanseUrbaine_Videos';
 import Heels_Videos from './components/Heels_Videos';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import ContactForm from './components/Contact';
+import PoleDanceCoach_Form from './components/PoleDanceCoach_Form';
 
 interface IProps {
     onOpenPaymentModal: () => void;
@@ -79,7 +73,6 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                     text: 'Fit And Fun', data: { tab: 'fitandfun' },
                     items: [
                         { text: 'Maylis & Stéphane', data: { tab: 'fitandfuncoach' } },
-                        { text: 'Fit Kids', data: { tab: 'fitkidsvideos' } },
                         { text: 'Cardio Boxing', data: { tab: 'cardioboxingvideos' } }
                     ]
                 },
@@ -97,23 +90,15 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                     ]
                 },
                 {
-                    text: 'Hip-Hop', data: { tab: 'hiphop' },
-                    items: [
-                        { text: 'Julia', data: { tab: 'hiphopcoach' } },
-                        { text: 'HipHop', data: { tab: 'hiphopvideos' } },
-                    ]
-                },
-                {
-                    text: 'Danse Urbaine', data: { tab: 'danseurbaine' },
-                    items: [
-                        { text: 'Sarah', data: { tab: 'danseurbainecoach' } },
-                        { text: 'Danse Urbaine', data: { tab: 'danseurbainevideos' } },
-                    ]
-                },
-                {
                     text: 'Cerceau Aérien', data: { tab: 'cerceauaerien' },
                     items: [
                         { text: 'Maylis', data: { tab: 'cerceauaeriencoach' } },
+                    ]
+                },
+                {
+                    text: 'Pole Dance', data: { tab: 'poledance' },
+                    items: [
+                        { text: 'Maylis', data: { tab: 'poledancecoach' } },
                     ]
                 },
                 {
@@ -122,24 +107,10 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                         { text: 'Déborah', data: { tab: 'heelscoach' } },
                         { text: 'Heels', data: { tab: 'heelsvideos' } },
                     ]
-                },
-                {
-                    text: 'Bachata', data: { tab: 'bachata' },
-                    items: [
-                        { text: 'Mickaël', data: { tab: 'bachatacoach' } },
-                    ]
                 }
             ]
         },
         { text: 'Planning/Réservation', data: { tab: 'planning' } },
-        {
-            text: 'Services', data: { tab: 'cours' },
-            items: [
-                {
-                    text: 'Votre coaching sur mesure', data: { tab: 'bodymindsuccess' },
-                }
-            ]
-        },
         { text: 'Qui sommes-nous ?', data: { tab: 'about' } },
     ];
 
@@ -216,30 +187,21 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
 
             <div className="tab-content">
                 {activeTab === 'fitandfuncoach' && <FitAndFunCoach_Form />}
-                {activeTab === 'fitkidsvideos' && <FitKids_Videos />}
                 {activeTab === 'cardioboxingvideos' && <CardioBoxing_Videos />}
                 {activeTab === 'twerkcoach' && <TwerkCoach_Form />}
                 {activeTab === 'twerkvideos' && <Twerk_Videos />}
                 {activeTab === 'commercialcoach' && <CommercialCoach_Form />}
-                {activeTab === 'danseurbainecoach' && <DanseUrbaineCoach_Form />}
-                {activeTab === 'danseurbainevideos' && <DanseUrbaine_Videos />}
                 {activeTab === 'cerceauaeriencoach' && <CerceauAerienCoach_Form />}
-                {activeTab === 'hiphopcoach' && <HipHopCoach_Form />}
-                {activeTab === 'hiphopvideos' && <HipHop_Videos />}
                 {activeTab === 'heelscoach' && <HeelsCoach_Form />}
                 {activeTab === 'heelsvideos' && <Heels_Videos />}
-                {activeTab === 'bachatacoach' && <BachataCoach_Form />}
                 {activeTab === 'about' && <AProposForm />}
                 {activeTab === 'home' && <HomeStudioGrisForm />}
                 {activeTab === 'planning' && <Planning_Form />}
                 {activeTab === 'contact' && <ContactForm />}
-                {activeTab === 'bodymindsuccess' && <BodyMindSuccessPrg_Form onOpenPaymentModal={props.onOpenPaymentModal} handleAmount={props.handleAmount} />}
+                {activeTab === 'poledancecoach' && <PoleDanceCoach_Form />}
             </div>
 
             <div className="homepage-cta">
-                <Button className="cta-button" onClick={() => window.location.href = "https://studio-gris.sportigo.fr"}>
-                    Je veux commencer maintenant
-                </Button>
                 <Button className="cta-button-secondary" onClick={() => setActiveTab('contact')}>Contact</Button>
             </div>
 
