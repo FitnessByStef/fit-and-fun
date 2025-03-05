@@ -18,11 +18,10 @@ import Heels_Videos from './components/Heels_Videos';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import ContactForm from './components/Contact';
 import PoleDanceCoach_Form from './components/PoleDanceCoach_Form';
+import { Helmet } from "react-helmet-async";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface IProps {
-    onOpenPaymentModal: () => void;
-    onClosePaymentModal: () => void;
-    handleAmount: React.Dispatch<React.SetStateAction<number>>;
 }
 
 interface MenuItem {
@@ -32,10 +31,12 @@ interface MenuItem {
 }
 
 const HomePage: React.FC<IProps> = (props: IProps) => {
-    const [activeTab, setActiveTab] = useState<string>('home');
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [activeTab, setActiveTab] = useState<string>(location.pathname.substring(1) || "home");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
-
+    
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -44,6 +45,7 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
         setActiveTab(tab);
         setOpenMenus({});
         setIsMenuOpen(false);
+        navigate(`/${tab}`); 
     };
 
     const handleMenuToggle = (key: string, level: number) => {
@@ -72,39 +74,39 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                 {
                     text: 'Fit And Fun', data: { tab: 'fitandfun' },
                     items: [
-                        { text: 'Maylis & Stéphane', data: { tab: 'fitandfuncoach' } },
-                        { text: 'Cardio Boxing', data: { tab: 'cardioboxingvideos' } }
+                        { text: 'Maylis & Stéphane', data: { tab: 'fitness' } },
+                        { text: 'Cardio Boxing', data: { tab: 'cardioboxing' } }
                     ]
                 },
                 {
                     text: 'Twerk', data: { tab: 'twerk' },
                     items: [
-                        { text: 'Maylis', data: { tab: 'twerkcoach' } },
+                        { text: 'Maylis', data: { tab: 'twerk' } },
                         { text: 'Twerk', data: { tab: 'twerkvideos' } },
                     ]
                 },
                 {
                     text: 'Commercial', data: { tab: 'commercial' },
                     items: [
-                        { text: 'Sarah', data: { tab: 'commercialcoach' } },
+                        { text: 'Sarah', data: { tab: 'commercial' } },
                     ]
                 },
                 {
                     text: 'Cerceau Aérien', data: { tab: 'cerceauaerien' },
                     items: [
-                        { text: 'Maylis', data: { tab: 'cerceauaeriencoach' } },
+                        { text: 'Maylis', data: { tab: 'cerceauaerien' } },
                     ]
                 },
                 {
                     text: 'Pole Dance', data: { tab: 'poledance' },
                     items: [
-                        { text: 'Maylis', data: { tab: 'poledancecoach' } },
+                        { text: 'Maylis', data: { tab: 'poledance' } },
                     ]
                 },
                 {
                     text: 'Heels', data: { tab: 'heels' },
                     items: [
-                        { text: 'Déborah', data: { tab: 'heelscoach' } },
+                        { text: 'Déborah', data: { tab: 'heels' } },
                         { text: 'Heels', data: { tab: 'heelsvideos' } },
                     ]
                 }
@@ -153,6 +155,23 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
 
     return (
         <div className="homepage-container">
+            <Helmet>
+                <title>Studio Gris - Fitness, Danse & Coaching Personnalisé</title>
+                <meta name="description" content="Cours de fitness, Renforcement musculaire, Cardio-training, Stretching, Pilate, Danse aérienne, Pole dance, Coaching sportif, Bien-être et santé, Perte de poids" />
+                <meta name="robots" content="index, follow" />
+                
+                {/* Balises Open Graph pour le partage sur Facebook */}
+                <meta property="og:title" content="Studio Gris - Fitness, Danse & Coaching Personnalisé" />
+                <meta property="og:description" content="Cours de fitness, Renforcement musculaire, Cardio-training, Stretching, Pilate, Danse aérienne, Pole dance, Coaching sportif, Bien-être et santé, Perte de poids" />
+                <meta property="og:url" content="https://www.studiogris.fr" />
+                <meta property="og:image" content="https://www.studiogris.fr/medias/logo/logo_studio_gris.jpg" />
+
+                {/* Balises Twitter Card pour le partage sur Twitter */}
+                <meta name="twitter:title" content="Studio Gris - Fitness, Danse & Coaching" />
+                <meta name="twitter:description" content="Cours de fitness, Renforcement musculaire, Cardio-training, Stretching, Pilate, Danse aérienne, Pole dance, Coaching sportif, Bien-être et santé, Perte de poids" />
+                <meta name="twitter:image" content="https://www.studiogris.fr/medias/logo/logo_studio_gris.jpg" />
+                <meta name="twitter:card" content="summary_large_image" />
+            </Helmet>
             <header className="homepage-header">
                 <div className="logo-toggle-wrapper">
                     <img src={'/medias/logo/logo_studio_gris.jpg'} alt="Fitness" className="homepage-logo" />
@@ -163,7 +182,7 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                         {renderMenuItems(menuItems)}
                     </div>
                 )}
-                <div className="header-title">STUDIO DE DANSES ET DE SPORTS</div>
+                <div className="header-title">STUDIO DE DANSES ET FITNESS</div>
                 <div className="social-media">
                     <a href="https://www.facebook.com/profile.php?id=61559492342771" target="_blank" rel="noopener noreferrer" className="social-button">
                         <FontAwesomeIcon icon={faFacebook} size="2x" />
@@ -186,19 +205,19 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
             </div>
 
             <div className="tab-content">
-                {activeTab === 'fitandfuncoach' && <FitAndFunCoach_Form />}
-                {activeTab === 'cardioboxingvideos' && <CardioBoxing_Videos />}
-                {activeTab === 'twerkcoach' && <TwerkCoach_Form />}
+                {activeTab === 'fitness' && <FitAndFunCoach_Form />}
+                {activeTab === 'cardioboxing' && <CardioBoxing_Videos />}
+                {activeTab === 'twerk' && <TwerkCoach_Form />}
                 {activeTab === 'twerkvideos' && <Twerk_Videos />}
-                {activeTab === 'commercialcoach' && <CommercialCoach_Form />}
-                {activeTab === 'cerceauaeriencoach' && <CerceauAerienCoach_Form />}
-                {activeTab === 'heelscoach' && <HeelsCoach_Form />}
+                {activeTab === 'commercial' && <CommercialCoach_Form />}
+                {activeTab === 'cerceauaerien' && <CerceauAerienCoach_Form />}
+                {activeTab === 'heels' && <HeelsCoach_Form />}
                 {activeTab === 'heelsvideos' && <Heels_Videos />}
                 {activeTab === 'about' && <AProposForm />}
                 {activeTab === 'home' && <HomeStudioGrisForm />}
                 {activeTab === 'planning' && <Planning_Form />}
                 {activeTab === 'contact' && <ContactForm />}
-                {activeTab === 'poledancecoach' && <PoleDanceCoach_Form />}
+                {activeTab === 'poledance' && <PoleDanceCoach_Form />}
             </div>
 
             <div className="homepage-cta">
