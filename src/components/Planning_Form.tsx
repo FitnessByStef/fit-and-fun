@@ -8,12 +8,12 @@ const Planning_Form: React.FC = () => {
             <h1 className="text-center mb-4">💥 Planning Studio Gris 💥</h1>
             <div className="text-center mb-4">
                 <Button
-                href="https://studio-gris.sportigo.fr/offers/"
+                href="https://studio-gris.sportigo.fr/reservation/"
                 target="_blank"
-                size="lg"
                 className="custom-pink-btn"
+                size="lg"
                 >
-                🎟️ Voir Nos Offres 🎟️
+                    📅 Réservation 📅
                 </Button>
             </div>
 
