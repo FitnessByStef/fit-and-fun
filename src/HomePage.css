@@ -103,7 +103,7 @@ body {
     top: 0; /* Le place en haut */
     left: 50%;
     transform: translateX(-50%);
-    max-width: 1168px;
+    max-width: 1200px;
     width: 100%; /* Assure que le header occupe toute la largeur */
     z-index: 1000; /* Le place au-dessus des autres éléments */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel, ajoute une ombre légère */
@@ -183,6 +183,23 @@ body {
     background-color: #353535;
     border-left: 2px solid #ff007f;
 }
+
+.custom-pink-btn {
+    background-color: #ff007f !important; /* Rose vif */
+    border: none !important;
+    padding: 10px 20px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease-in-out !important;
+    color: white !important;
+  }
+  
+  .custom-pink-btn:hover {
+    background-color: #d81b60 !important; /* Un rose plus foncé au survol */
+    transform: scale(1.05) !important;
+  }
+  
 .social-button {
     color: #ff007f;
     transition: color 0.3s ease;
@@ -348,7 +365,8 @@ body {
 /* Bannière */
 .homepage-banner {
     margin-bottom: 20px;
-    margin-top: 225px;
+    margin-top: 235px;
+    
 }
 
 .slider {

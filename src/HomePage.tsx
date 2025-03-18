@@ -20,7 +20,9 @@ import ContactForm from './components/Contact';
 import PoleDanceCoach_Form from './components/PoleDanceCoach_Form';
 import { Helmet } from "react-helmet-async";
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import Offers_Form from './components/Offers_Form';
+ 
 interface IProps {
 }
 
@@ -113,6 +115,7 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
             ]
         },
         { text: 'Planning/Réservation', data: { tab: 'planning' } },
+        { text: 'Nos offres', data: { tab: 'offers' } },
         { text: 'Qui sommes-nous ?', data: { tab: 'about' } },
     ];
 
@@ -191,8 +194,8 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                         <FontAwesomeIcon icon={faInstagram} size="2x" />
                     </a>
                 </div>
+                
             </header>
-
             <div className="homepage-banner">
                 <div className="slider">
                     <div className="slides">
@@ -203,6 +206,7 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                     </div>
                 </div>
             </div>
+            
 
             <div className="tab-content">
                 {activeTab === 'fitness' && <FitAndFunCoach_Form />}
@@ -218,6 +222,7 @@ const HomePage: React.FC<IProps> = (props: IProps) => {
                 {activeTab === 'planning' && <Planning_Form />}
                 {activeTab === 'contact' && <ContactForm />}
                 {activeTab === 'poledance' && <PoleDanceCoach_Form />}
+                {activeTab === 'offers' && <Offers_Form />}
             </div>
 
             <div className="homepage-cta">
