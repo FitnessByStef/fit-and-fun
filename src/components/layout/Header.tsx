@@ -4,13 +4,11 @@ import { Link, NavLink } from 'react-router-dom';
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
-  const [teamOpen, setTeamOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
 
   const closeAllMenus = () => {
     setMobileOpen(false);
     setCoursesOpen(false);
-    setTeamOpen(false);
     setAboutOpen(false);
   };
 
