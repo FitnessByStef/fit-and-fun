@@ -1,0 +1,146 @@
+.coach-page {
+  width: 100%;
+}
+
+.coach-hero {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 24px 64px;
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 28px;
+}
+
+.coach-hero__content,
+.coach-hero__media {
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.coach-hero__content {
+  padding: 56px;
+  background:
+    linear-gradient(135deg, rgba(255, 47, 134, 0.18), rgba(255, 255, 255, 0.04)),
+    #141418;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.coach-hero__content h1 {
+  margin: 0 0 12px;
+  color: var(--pink);
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.coach-hero__content h2 {
+  margin: 0 0 22px;
+  color: #fff;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+}
+
+.coach-hero__content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  font-size: 1.08rem;
+}
+
+.coach-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coach-section {
+  max-width: 1100px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.coach-section h2 {
+  margin: 0 0 20px;
+  color: var(--pink);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.coach-section p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.04rem;
+}
+
+.coach-split {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.coach-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.coach-tags span {
+  padding: 12px 16px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 47, 134, 0.14);
+  border: 1px solid rgba(255, 47, 134, 0.35);
+  font-weight: 700;
+}
+
+.coach-card {
+  padding: 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--border);
+}
+
+.coach-card h3 {
+  margin: 0 0 14px;
+  color: #fff;
+}
+
+.coach-card p {
+  margin: 0;
+}
+
+.coach-cta {
+  max-width: 1240px;
+  margin: 72px auto 0;
+  padding: 72px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.coach-cta h2 {
+  margin: 0 0 22px;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+}
+
+@media (max-width: 900px) {
+  .coach-hero {
+    grid-template-columns: 1fr;
+    padding: 16px 16px 40px;
+  }
+
+  .coach-hero__content,
+  .coach-hero__media {
+    border-radius: 24px;
+  }
+
+  .coach-hero__content {
+    padding: 36px 28px;
+  }
+
+  .coach-split {
+    grid-template-columns: 1fr;
+  }
+}
