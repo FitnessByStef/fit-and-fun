@@ -2,10 +2,6 @@
   "name": "fit-and-fun",
   "version": "0.1.0",
   "private": true,
-  "resolutions": {
-    "ajv": "^8.17.1",
-    "ajv-keywords": "^5.0.0"
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
@@ -29,9 +25,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@types/react-router-dom": "^5.3.3",
     "ajv": "^8.17.1",
-    "ajv-keywords": "^4.0.1",
+    "ajv-keywords": "^5.1.0",
     "bootstrap": "^5.3.3",
     "emailjs-com": "^3.2.0",
     "react": "^18.3.1",
@@ -45,7 +40,7 @@
     "react-slick": "^0.30.2",
     "react-transition-group": "^4.4.5",
     "slick-carousel": "^1.8.1",
-    "typescript": "^5.6.3",
+    "typescript": "4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
