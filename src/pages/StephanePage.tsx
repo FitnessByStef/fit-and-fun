@@ -1,3 +1,4 @@
+import { studio } from '../studio';
 import '../styles/coach.css';
 
 const StephanePage = () => {
@@ -22,7 +23,7 @@ const StephanePage = () => {
       <section className="coach-section">
         <h2>Son univers</h2>
         <p>
-          Stéphane enseigne les cours Fit & Fun, Powerpulse, Athletic et Cardio Boxing.
+          Stéphane enseigne les cours Fit & Fun, PowerPulse, Circuit athlétique et Cardio Boxing.
           Son approche repose sur l’énergie, le dépassement de soi, le renforcement
           musculaire et le plaisir de bouger.
         </p>
@@ -37,8 +38,8 @@ const StephanePage = () => {
         <div>
           <h2>Ses disciplines</h2>
           <div className="coach-tags">
-            <span>Powerpulse</span>
-            <span>Athletic</span>
+            <span>PowerPulse</span>
+            <span>Circuit athlétique</span>
             <span>Cardio Boxing</span>
             <span>Renforcement musculaire</span>
             <span>Coaching sportif</span>
@@ -57,7 +58,7 @@ const StephanePage = () => {
       <section className="coach-cta">
         <h2>Envie de tester un cours avec Stéphane ?</h2>
         <a
-          href="https://www.instagram.com/le_studiogris/"
+          href={studio.booking}
           target="_blank"
           rel="noreferrer"
           className="primary-button"

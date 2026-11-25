@@ -1,3 +1,4 @@
+import { studio } from '../studio';
 import '../styles/course.css';
 
 const AthleticPage = () => {
@@ -16,7 +17,7 @@ const AthleticPage = () => {
         >
           <div className="course-hero__content">
             <p className="overline">Fitness</p>
-            <h1>ATHLETIC</h1>
+            <h1>Circuit athlétique</h1>
             <p>
               Un cours cardio explosif pour développer endurance, coordination,
               posture athlétique et puissance dans une ambiance ultra motivante.
@@ -28,7 +29,7 @@ const AthleticPage = () => {
       <section className="course-section">
         <h2>Le concept</h2>
         <p>
-          Athletic est un cours de fitness très dynamique, pensé pour faire monter
+          Le circuit athlétique est un cours de fitness très dynamique, pensé pour faire monter
           le cardio, améliorer la coordination et construire une vraie qualité de mouvement.
         </p>
         <p>
@@ -46,7 +47,7 @@ const AthleticPage = () => {
         <div className="course-split__content">
           <h2>Pourquoi on aime ce cours</h2>
           <p>
-            Athletic ne se limite pas à bouger vite. Le cours travaille aussi la posture,
+            Le circuit athlétique ne se limite pas à bouger vite. Le cours travaille aussi la posture,
             la coordination et la qualité athlétique générale, ce qui le rend à la fois
             intense, utile et très stimulant.
           </p>
@@ -63,8 +64,10 @@ const AthleticPage = () => {
 
         <div className="course-split__media">
           <img
+            loading="lazy"
+            decoding="async"
             src="/medias/cours/Athletic/Athletic.jpeg"
-            alt="Cours Athletic au Studio Gris"
+            alt="Cours de circuit athlétique au Studio Gris"
           />
         </div>
       </section>
@@ -72,18 +75,18 @@ const AthleticPage = () => {
       <section className="course-section">
         <h2>L’expérience Studio Gris</h2>
         <p>
-          Dans un cadre moderne et immersif, Athletic devient un vrai moment pour se vider
+          Dans un cadre moderne et immersif, le circuit athlétique devient un vrai moment pour se vider
           la tête, repousser ses limites et ressentir le plaisir de bouger avec intensité.
         </p>
       </section>
 
       <section className="course-cta">
-        <h2>Prêt à tester Athletic ?</h2>
+        <h2>Prêt à tester le circuit athlétique ?</h2>
         <p>
           Viens découvrir une séance rythmée, intense et motivante au Studio Gris.
         </p>
         <a
-          href="https://www.instagram.com/le_studiogris/"
+          href={studio.booking}
           target="_blank"
           rel="noreferrer"
           className="primary-button"

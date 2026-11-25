@@ -1,3 +1,4 @@
+import { studio } from '../studio';
 import '../styles/course.css';
 
 const CardioBoxingPage = () => {
@@ -62,6 +63,8 @@ const CardioBoxingPage = () => {
 
         <div className="course-split__media">
           <img
+            loading="lazy"
+            decoding="async"
             src="/medias/cours/CardioBoxing/CardioBoxing2.jpeg"
             alt="Cours de Cardio Boxing au Studio Gris"
           />
@@ -80,6 +83,8 @@ const CardioBoxingPage = () => {
       <section className="course-section course-split">
         <div className="course-split__media">
           <img
+            loading="lazy"
+            decoding="async"
             src="/medias/cours/CardioBoxing/CardioBoxing3.jpeg"
             alt="Sac de frappe Cardio Boxing Studio Gris"
           />
@@ -105,7 +110,7 @@ const CardioBoxingPage = () => {
           accessible et ultra motivant.
         </p>
         <a
-          href="https://www.instagram.com/le_studiogris/"
+          href={studio.booking}
           target="_blank"
           rel="noreferrer"
           className="primary-button"

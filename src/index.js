@@ -1,11 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot, hydrateRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
-import App from './App.tsx';
+import App from './App';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const app = (
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <HelmetProvider>
+      <BrowserRouter><App /></BrowserRouter>
+    </HelmetProvider>
+  </React.StrictMode>
 );
+
+const query = new URLSearchParams(window.location.search);
+const path = window.location.pathname.replace(/\/$/, '') || '/';
+const customizedPage = (path === '/offers' && query.has('categorie')) || (path === '/contact' && query.has('motif'));
+if (container.dataset.prerendered === path && !customizedPage) {
+  hydrateRoot(container, app);
+} else {
+  createRoot(container).render(app);
+}

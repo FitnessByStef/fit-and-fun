@@ -1,46 +1,47 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faCalendarDays, faTicket } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import { eventImage, fitnessUniverseImage, universePaths } from '../studio';
 import '../styles/home.css';
 
-const HomePage = () => {
-  return (
-    <div className="home-page">
-      <section className="hero-placeholder">
-        <div
-          className="hero-placeholder__content"
-          style={{
-            backgroundImage: `
-              linear-gradient(90deg, rgba(8,8,8,0.82) 0%, rgba(8,8,8,0.56) 42%, rgba(8,8,8,0.18) 100%),
-              url('/medias/studio/Salle_StudioGris.jpg')
-            `,
-          }}
-        >
-          <p className="overline">Studio de danse & fitness</p>
+const media = '/medias/accueil/';
 
-          <h1 className="hero-title">Le Studio Gris</h1>
+const gateways = [
+  { title: 'Danse & Aérien', path: universePaths.aerial, image: '/medias/cours/Cerceau Aerien/CerceauAerien4.jpeg', width: 1200, height: 1600, style: 'aerial' },
+  { title: 'Fitness', path: universePaths.fitness, image: fitnessUniverseImage, width: 860, height: 500, style: 'fitness' },
+  { title: 'EVJF & Girls Night', path: '/evjf-girls-night', image: eventImage, width: 1284, height: 708, style: 'event' },
+];
 
-          <h2 className="hero-subtitle">Un lieu unique pour bouger, respirer et se retrouver</h2>
+function UniverseCard({ gateway }: { gateway: typeof gateways[number] }) {
+  return <Link to={gateway.path} className={'universe-card universe-card--' + gateway.style} aria-label={gateway.title}>
+    <img src={gateway.image} width={gateway.width} height={gateway.height} alt="" />
+    {gateway.style !== 'event' && <span className="universe-card-label">{gateway.title}<FontAwesomeIcon icon={faArrowRight} /></span>}
+  </Link>;
+}
 
-          <div className="hero-text">
-            <p>
-              Notre studio climatisé de 150m², avec 6 mètres de hauteur sous plafond,
-              offre un cadre unique. Le plafond étoilé crée une ambiance idéale pour les
-              séances de stretching et de relaxation.
-            </p>
-
-            <p>
-              À l’étage, un espace détente ainsi qu’un bar sont à votre disposition dans
-              un environnement apaisant.
-            </p>
-
-            <p>
-              Grand parking gratuit, sécurisé et sous vidéo-surveillance, à seulement
-              12 minutes au nord de Serres-Castet et 2 minutes de la sortie d’autoroute
-              de Thèze.
-            </p>
+export default function HomePage() {
+  return <div className="home-page">
+    <section className="immersive-hero">
+      <div className="hero-art">
+        <img className="hero-room" src={media + 'salle.webp'} width="1050" height="1037" alt="" loading="eager" />
+        <img className="hero-dust" src={media + 'poudre-rose.webp'} width="800" height="700" alt="" />
+        <img className="hero-aerial" src={media + 'cerceau-detoure.webp'} width="790" height="804"
+          alt="Une pratiquante au cerceau aérien dans la salle du Studio Gris" loading="eager" />
+      </div>
+      <div className="hero-inner">
+        <div className="hero-copy">
+          <h1><span>Le Studio</span> <em>Gris</em></h1>
+          <p className="hero-disciplines">Danse <span>·</span> Aérien <span>·</span> Fitness</p>
+          <p className="hero-tagline">Bouger, <em>s’élever</em> et <em>se dépasser</em><br /><small>dans un studio chaleureux à Thèze.</small></p>
+          <div className="button-row">
+            <Link className="primary-button" to="/planning"><FontAwesomeIcon icon={faCalendarDays} /> Voir le planning</Link>
+            <Link className="secondary-button" to="/offers"><FontAwesomeIcon icon={faTicket} /> Découvrir les offres</Link>
           </div>
         </div>
-      </section>
-    </div>
-  );
-};
-
-export default HomePage;
+      </div>
+    </section>
+    <nav className="home-universes" aria-label="Les activités du Studio Gris">
+      {gateways.map(gateway => <UniverseCard key={gateway.path} gateway={gateway} />)}
+    </nav>
+  </div>;
+}

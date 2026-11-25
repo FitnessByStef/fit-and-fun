@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Le Studio Gris
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Site React du Studio Gris à Thèze.
 
-## Available Scripts
+## Développement
 
-In the project directory, you can run:
+```sh
+npm ci
+npm start
+```
 
-### `npm start`
+Ouvrir http://localhost:3000. La page événement est à `/evjf-girls-night` et le parcours de devis à `/contact?motif=evjf#message`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```sh
+npm test -- --watchAll=false --passWithNoTests
+npx tsc --noEmit
+npm run lint
+npm run build
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Le build prérend le contenu React de chaque route publique dans `build/`, avec ses métadonnées, les redirections historiques et le sitemap. Les catégories du catalogue ont chacune une URL indexable. L’hébergement existant utilise GitHub Pages.
 
-### `npm test`
+## Contact et devis
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Pour activer l’envoi sur le site, renseigner les trois variables publiques de `.env.example` dans `.env.local`. Sur GitHub Actions, créer les variables de dépôt du même nom puis relancer le déploiement. Les formulaires de contact et de devis partagent le service EmailJS.
 
-### `npm run build`
+Dans le modèle EmailJS, définir **lebatimentgris@gmail.com** comme destinataire fixe, `{{email}}` comme Reply-To, `{{subject}}` comme sujet et utiliser `{{name}}` et `{{message}}` dans le corps. Configurer la liste des origines autorisées, dont `https://www.studiogris.fr`. Vérifier la réception d’un message de chaque formulaire avant la mise en ligne et compléter les informations de confidentialité selon la configuration effective du service.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Sans configuration, le parcours de devis prépare un brouillon dans la messagerie de la personne. L’envoi reste à effectuer dans cette messagerie.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Les coordonnées et liens sont dans `src/studio-config.json`, les disciplines et créneaux dans `src/studio.ts` et les métadonnées par page dans `src/seo.json`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Mise en ligne et indexation
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Après le déploiement, vérifier que le domaine public renvoie les pages et `/sitemap.xml` en HTTP 200, puis soumettre le sitemap dans Google Search Console. Utiliser l’inspection d’URL pour contrôler l’accueil, le planning, les tarifs et la page EVJF. Pour le référencement local, vérifier que la fiche Google Business Profile reprend la même adresse, le même téléphone et le domaine public.

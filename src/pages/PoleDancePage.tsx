@@ -1,3 +1,4 @@
+import { studio } from '../studio';
 import '../styles/course.css';
 
 const PoleDancePage = () => {
@@ -63,6 +64,8 @@ const PoleDancePage = () => {
 
         <div className="course-split__media">
           <img
+            loading="lazy"
+            decoding="async"
             src="/medias/cours/Pole/Pole1.jpeg"
             alt="Cours de pole dance au Studio Gris"
           />
@@ -81,6 +84,8 @@ const PoleDancePage = () => {
       <section className="course-section course-split">
         <div className="course-split__media">
           <img
+            loading="lazy"
+            decoding="async"
             src="/medias/cours/Pole/Pole6.jpeg"
             alt="Figure de pole dance au Studio Gris"
           />
@@ -106,7 +111,7 @@ const PoleDancePage = () => {
           Viens découvrir une discipline forte, élégante et pleine de sensations au Studio Gris.
         </p>
         <a
-          href="https://www.instagram.com/le_studiogris/"
+          href={studio.booking}
           target="_blank"
           rel="noreferrer"
           className="primary-button"

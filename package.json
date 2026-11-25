@@ -49,7 +49,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build && echo > build/.nojekyll",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "postbuild": "node scripts-generate-pages.cjs",
+    "lint": "eslint src --ext .js,.ts,.tsx"
   },
   "eslintConfig": {
     "extends": [

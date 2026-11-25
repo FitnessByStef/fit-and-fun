@@ -68,3 +68,4 @@
     border-radius: 20px;
   }
 }
+.faq-card a { color: var(--pink); text-decoration: underline; }

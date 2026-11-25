@@ -1,3 +1,4 @@
+import { studio } from '../studio';
 import '../styles/course.css';
 
 const PowerpulsePage = () => {
@@ -30,7 +31,7 @@ const PowerpulsePage = () => {
       <section className="course-section">
         <h2>Le concept</h2>
         <p>
-          Powerpulse est un cours de renforcement musculaire dynamique,
+          PowerPulse est un cours de renforcement musculaire dynamique,
           basé sur des enchaînements rythmés avec charges légères à modérées.
         </p>
         <p>
@@ -62,12 +63,12 @@ const PowerpulsePage = () => {
       </section>
 
       <section className="course-cta">
-        <h2>Prêt à tester le Powerpulse ?</h2>
+        <h2>Prêt à tester le PowerPulse ?</h2>
         <p>
           Viens découvrir un cours intense, rythmé et accessible à tous les niveaux.
         </p>
         <a
-          href="https://www.instagram.com/le_studiogris/"
+          href={studio.booking}
           target="_blank"
           rel="noreferrer"
           className="primary-button"

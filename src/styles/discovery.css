@@ -1,0 +1,10 @@
+.course-discovery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .9rem; }
+.course-discovery-card { overflow: hidden; display: block; border: 1px solid var(--border); border-radius: .8rem; background: var(--bg-soft); }
+.course-discovery-card:hover { border-color: var(--pink); color: var(--pink); }
+.course-discovery-card img { width: 100%; aspect-ratio: 1.55; object-fit: cover; }
+.course-discovery-card--pole-dance img { object-position: center 21%; }
+.course-discovery-card--cerceau-aerien img { object-position: center 34%; }
+.course-discovery-card--danse-commerciale img { object-fit: contain; background: #18151a; }
+.course-discovery-card h3 { font-size: 1.05rem; margin: 0; padding: .8rem; }
+@media (max-width: 760px) { .course-discovery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 350px) { .course-discovery-grid { grid-template-columns: 1fr; } }

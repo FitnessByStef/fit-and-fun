@@ -1,3 +1,4 @@
+import { studio } from '../studio';
 import '../styles/course.css';
 
 const CerceauEnfantPage = () => {
@@ -16,7 +17,7 @@ const CerceauEnfantPage = () => {
         >
           <div className="course-hero__content">
             <p className="overline">Danse & aérien enfant</p>
-            <h1>CERCEAU ENFANT</h1>
+            <h1>Danses aériennes Kids</h1>
             <p>
               Une activité aérienne ludique et artistique pour développer motricité,
               confiance, coordination et plaisir de bouger.
@@ -63,6 +64,8 @@ const CerceauEnfantPage = () => {
 
         <div className="course-split__media">
           <img
+            loading="lazy"
+            decoding="async"
             src="/medias/cours/Cerceau enfant/CerceauEnfant2.jpeg"
             alt="Cours de cerceau aérien enfant au Studio Gris"
           />
@@ -81,6 +84,8 @@ const CerceauEnfantPage = () => {
       <section className="course-section course-split">
         <div className="course-split__media">
           <img
+            loading="lazy"
+            decoding="async"
             src="/medias/cours/Cerceau enfant/CerceauEnfant4.jpeg"
             alt="Échauffement enfant au Studio Gris"
           />
@@ -106,7 +111,7 @@ const CerceauEnfantPage = () => {
           réserver une séance d’essai.
         </p>
         <a
-          href="https://www.instagram.com/le_studiogris/"
+          href={studio.booking}
           target="_blank"
           rel="noreferrer"
           className="primary-button"

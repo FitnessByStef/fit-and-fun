@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { disciplines } from '../studio';
 import '../styles/faq.css';
 
 const faqs = [
@@ -9,7 +11,7 @@ const faqs = [
   {
     question: 'Quels cours propose Le Studio Gris ?',
     answer:
-      'Le Studio Gris propose Pole Dance, Cerceau aérien, Heels, Stretching, Fitness, Powerpulse, Cardio Boxing, Athletic, Flow Pilates et des cours adaptés aux enfants.',
+      'Le Studio Gris propose les disciplines suivantes : ' + Object.values(disciplines).map(course => course.name).join(', ') + '.',
   },
   {
     question: 'Les cours sont-ils accessibles aux débutants ?',
@@ -34,7 +36,7 @@ const faqs = [
   {
     question: 'Les cours sont-ils réservés aux femmes ?',
     answer:
-      'La majorité de nos cours est orientée vers un public féminin, notamment pour la Pole Dance, le Heels et le Cerceau aérien. Certains cours de fitness et de renforcement musculaire sont ouverts à tous selon les créneaux.',
+      'La majorité de nos cours est orientée vers un public féminin, notamment pour la Pole Dance, la danse commerciale et le cerceau aérien. Certains cours de fitness et de renforcement musculaire sont ouverts à tous selon les créneaux.',
   },
   {
     question: 'Quel est l’objectif de votre studio à Thèze ?',
@@ -72,6 +74,10 @@ const FaqPage = () => {
             <p>{faq.answer}</p>
           </article>
         ))}
+        <article className="faq-card">
+          <h2>Comment voir les tarifs et préparer ma première visite ?</h2>
+          <p>Consultez les <Link to="/offers">tarifs et cours d’essai</Link>, choisissez un créneau dans le <Link to="/planning">planning des cours</Link> et retrouvez l’itinéraire sur la <Link to="/contact">page Contact</Link>.</p>
+        </article>
       </section>
     </div>
   );

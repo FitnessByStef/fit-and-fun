@@ -1,3 +1,4 @@
+import { studio } from '../studio';
 import '../styles/course.css';
 
 const CerceauAerienPage = () => {
@@ -65,6 +66,8 @@ const CerceauAerienPage = () => {
 
         <div className="course-split__media">
           <img
+            loading="lazy"
+            decoding="async"
             src="/medias/cours/Cerceau Aerien/CerceauAerien3.jpeg"
             alt="Cerceau aérien au Studio Gris"
           />
@@ -83,6 +86,8 @@ const CerceauAerienPage = () => {
       <section className="course-section course-split">
         <div className="course-split__media">
           <img
+            loading="lazy"
+            decoding="async"
             src="/medias/cours/Cerceau Aerien/CerceauAerien5.jpeg"
             alt="Pratique du cerceau aérien au Studio Gris"
           />
@@ -109,7 +114,7 @@ const CerceauAerienPage = () => {
           Viens essayer une discipline aérienne élégante, forte et captivante au Studio Gris.
         </p>
         <a
-          href="https://www.instagram.com/le_studiogris/"
+          href={studio.booking}
           target="_blank"
           rel="noreferrer"
           className="primary-button"

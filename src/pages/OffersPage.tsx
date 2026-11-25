@@ -1,94 +1,54 @@
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { activeOffers, formatOfferPrice, offerCategories, offersPath } from '../offers';
+import { emailLink } from '../studio';
 import '../styles/offers.css';
 
-const offersUrl = 'https://studio-gris.sportigo.fr/offers/';
+function OfferCard({ offer }: { offer: ReturnType<typeof activeOffers>[number] }) {
+  const price = formatOfferPrice(offer.price);
+  const quantity = offer.included && (offer.billing ? offer.included + ' cours par mois' : offer.included + (offer.included === 1 ? ' séance' : ' séances'));
+  const subject = ['Offre Studio Gris', offer.name, price + (offer.billing ? ' / mois' : ''), offer.commitment].filter(Boolean).join(' – ');
+  const action = offer.termsConfirmed && offer.subscription;
 
-const offers = [
-  {
-    category: 'Fitness',
-    items: [
-      { title: 'Fit&Fun - Avec engagement', detail: 'Engagement 6 mois', price: '38€ / mois' },
-      { title: 'Fit&Fun - Sans engagement', detail: 'Sans engagement', price: '44€ / mois' },
-      { title: 'Carte 5 séances Fit&Fun', detail: '5 séances utilisables 2 mois', price: '55€' },
-    ],
-  },
-  {
-    category: 'Danse & aérien',
-    items: [
-      { title: 'Abonnement Essentiel', detail: '4 cours de danse, pole ou cerceau / mois', price: '52€ / mois' },
-      { title: 'Abonnement Envol', detail: '6 cours d’aérien + 2 opens / mois', price: '60€ / mois' },
-      { title: 'Abonnement Éclat', detail: '8 séances / mois + 4 opens inclus', price: '85€ / mois' },
-      { title: 'Abonnement Illimité', detail: 'Accès à tous les cours + opens illimités', price: '125€ / mois' },
-    ],
-  },
-  {
-    category: 'Cartes & unité',
-    items: [
-      { title: 'Cours à l’unité', detail: 'Accès à une séance', price: '18€' },
-      { title: 'Carte 5 séances', detail: '5 séances utilisables 2 mois', price: '75€' },
-      { title: 'Carte 10 séances + 1 offert', detail: '10 séances + 1 cours offert', price: '130€' },
-      { title: 'Séance d’essai', detail: 'Découverte du studio', price: '10€' },
-    ],
-  },
-  {
-    category: 'Enfants',
-    items: [
-      { title: 'Danse enfant - 4 séances', detail: '4 séances par mois', price: '35€ / mois' },
-      { title: 'Aérien enfant', detail: '2 séances par mois', price: '22€ / mois' },
-      { title: 'Cours enfant à l’unité', detail: 'Cours à l’unité', price: '14€' },
-    ],
-  },
-  {
-    category: 'Autres',
-    items: [
-      { title: 'Consultation naturopathie', detail: 'Consultation individuelle', price: '60€' },
-      { title: 'Fédération Française de Danse', detail: 'Adhésion 2025', price: '24€' },
-    ],
-  },
-];
+  return <article className="offer-card">
+    <h3>{offer.name}</h3>
+    <p className="offer-price"><strong>{price}</strong>{offer.billing && <span> / mois</span>}</p>
+    {quantity && <p>{quantity}</p>}
+    {offer.commitment && <p>{offer.commitment}{offer.commitmentDuration ? ' · ' + offer.commitmentDuration : ''}</p>}
+    {offer.validity && <p>{offer.validity}</p>}
+    {offer.free && <p className="offer-free">{offer.free} séance offerte</p>}
+    <a className="offer-action" href={action ? action.url : emailLink(subject)}
+      aria-label={(action ? 'Choisir ' : 'Contacter le studio pour ') + offer.name + ', ' + price + (offer.billing ? ' par mois' : '')}>
+      {action ? (offer.type === 'carte' ? 'Choisir cette carte' : 'Choisir cette formule') : 'Contacter le studio'}
+    </a>
+  </article>;
+}
 
-const OffersPage = () => {
-  return (
-    <div className="offers-page">
-      <section className="offers-hero">
-        <p className="overline">Tarifs & abonnements</p>
-        <h1>Nos offres</h1>
-        <p>
-          Choisissez la formule qui correspond à votre rythme : fitness, danse,
-          aérien, cartes de séances ou abonnements mensuels.
-        </p>
-        <a href={offersUrl} target="_blank" rel="noreferrer" className="primary-button">
-          Voir les offres sur Sportigo
-        </a>
-      </section>
+export default function OffersPage() {
+  const [params] = useSearchParams();
+  const { pathname } = useLocation();
+  const path = pathname.replace(/\/$/, '');
+  const category = offerCategories.find(item => path === offersPath(item.id) && item.id !== 'danse-aerien')
+    || offerCategories.find(item => item.id === params.get('categorie')) || offerCategories[0];
+  const catalog = activeOffers(category.id);
+  const lessonOffers = catalog.filter(offer => offer.type !== 'autre');
+  const otherOffers = catalog.filter(offer => offer.type === 'autre');
 
-      <section className="offers-section">
-        {offers.map((group) => (
-          <div key={group.category} className="offers-group">
-            <h2>{group.category}</h2>
-
-            <div className="offers-grid">
-              {group.items.map((offer) => (
-                <a
-                  key={offer.title}
-                  href={offersUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="offer-card"
-                >
-                  <div>
-                    <h3>{offer.title}</h3>
-                    <p>{offer.detail}</p>
-                  </div>
-
-                  <strong>{offer.price}</strong>
-                </a>
-              ))}
-            </div>
-          </div>
-        ))}
-      </section>
-    </div>
-  );
-};
-
-export default OffersPage;
+  return <div className="studio-container catalog">
+    <section className="catalog-heading">
+      <h1>Nos offres</h1>
+      <p>Trouvez la formule qui vous ressemble.</p>
+    </section>
+    <nav className="offer-categories" aria-label="Catégories des offres">
+      {offerCategories.map(item => <Link key={item.id} to={offersPath(item.id)} preventScrollReset
+        aria-current={category.id === item.id ? 'true' : undefined}>{item.label}</Link>)}
+    </nav>
+    <section className="catalog-section" aria-labelledby="current-category">
+      <h2 id="current-category">{category.label}</h2>
+      <div className="offer-grid">{lessonOffers.map(offer => <OfferCard key={offer.id} offer={offer} />)}</div>
+    </section>
+    {otherOffers.length > 0 && <section className="catalog-section">
+      <h2>Fédération française de danse</h2>
+      <div className="offer-grid">{otherOffers.map(offer => <OfferCard key={offer.id} offer={offer} />)}</div>
+    </section>}
+  </div>;
+}

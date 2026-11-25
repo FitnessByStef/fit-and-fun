@@ -1,102 +1,34 @@
+import { useSearchParams } from 'react-router-dom';
+import MessageForm from '../components/common/MessageForm';
+import SocialLinks from '../components/common/SocialLinks';
+import { emailLink, studio } from '../studio';
 import '../styles/contact.css';
 
-const ContactPage = () => {
-  return (
-    <div className="contact-page">
-      <section className="contact-hero">
-        <div className="contact-hero__content">
-          <p className="overline">Contact</p>
-          <h1>Contactez le Studio Gris</h1>
-          <p>
-            Une question, une réservation, un cours d’essai ou besoin d’un renseignement ?
-            Contactez-nous directement.
-          </p>
-        </div>
+export default function ContactPage() {
+  const [params] = useSearchParams();
+  const quote = params.get('motif') === 'evjf';
 
-        <div className="contact-hero__media">
-          <img
-            src="/medias/studio/Salle_StudioGris.jpg"
-            alt="Le Studio Gris à Thèze"
-          />
-        </div>
+  return <div className="studio-container">
+    <section className="page-heading">
+      <h1>{quote ? 'Devis EVJF & Girls Night' : 'Contactez le Studio Gris'}</h1>
+      <p>{quote ? 'Parlez-nous de l’événement que vous souhaitez organiser à Thèze.' : 'Une question sur les cours, les réservations ou une séance d’essai ?'}</p>
+    </section>
+    <div className="contact-columns studio-section">
+      <section className="contact-card" id="message">
+        <h2>{quote ? 'Votre demande de devis' : 'Écrivez-nous'}</h2>
+        <MessageForm key={String(quote)} quote={quote} />
       </section>
-
-      <section className="contact-section">
-        <div className="contact-card">
-          <h2>Le Studio Gris</h2>
-
-          <div className="contact-list">
-            <div>
-              <span>Adresse</span>
-              <p>
-                9 route de Lalonquette<br />
-                64450 Thèze
-              </p>
-            </div>
-
-            <div>
-              <span>Téléphone</span>
-              <p>
-                <a href="tel:+33781577673">07 81 57 76 73</a>
-              </p>
-            </div>
-
-            <div>
-              <span>Email</span>
-              <p>
-                <a href="mailto:lafuente.sante@gmail.com">
-                  lafuente.sante@gmail.com
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <div className="contact-actions">
-            <a
-              href="tel:+33781577673"
-              className="primary-button"
-            >
-              Appeler
-            </a>
-
-            <a
-              href="mailto:lafuente.sante@gmail.com"
-              className="secondary-button"
-            >
-              Envoyer un email
-            </a>
-          </div>
-        </div>
-
-        <div className="contact-card contact-card--highlight">
-          <h2>Réserver une séance</h2>
-          <p>
-            Pour réserver un cours, consulter les créneaux ou prendre une séance d’essai,
-            vous pouvez passer par Sportigo ou nous contacter directement.
-          </p>
-
-          <a
-            href="https://studio-gris.sportigo.fr/"
-            target="_blank"
-            rel="noreferrer"
-            className="primary-button"
-          >
-            Réserver sur Sportigo
-          </a>
-        </div>
-      </section>
-
-      <section className="contact-map">
-        <h2>Nous trouver</h2>
-
-        <iframe
-          title="Carte Studio Gris Thèze"
-          src="https://www.google.com/maps?q=9%20route%20de%20Lalonquette%2064450%20Th%C3%A8ze&output=embed"
-          loading="lazy"
-        />
+      <section className="contact-card">
+        <h2>Le Studio Gris</h2>
+        <p>{studio.address}<br />{studio.city}</p>
+        <p><a href={studio.tel}>{studio.phone}</a><br /><a href={emailLink()}>{studio.email}</a></p>
+        <SocialLinks />
+        <p><a className="secondary-button" href={studio.booking} target="_blank" rel="noreferrer">Réserver sur Sportigo</a></p>
       </section>
     </div>
-  );
-};
-
-export default ContactPage;
+    <section className="studio-section contact-location">
+      <h2>Nous trouver</h2>
+      <iframe title="Carte du Studio Gris à Thèze" src={'https://www.google.com/maps?q=' + encodeURIComponent(studio.address + ' ' + studio.city) + '&output=embed'} loading="lazy" />
+    </section>
+  </div>;
+}

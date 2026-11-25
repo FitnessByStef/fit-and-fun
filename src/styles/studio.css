@@ -1,0 +1,43 @@
+.studio-container { width: min(var(--container), 100% - 2rem); margin-inline: auto; }
+.studio-section { margin-block: clamp(2rem, 5vw, 4.25rem); }
+.studio-section > h2, .course-schedule h2 { font-size: clamp(1.65rem, 4vw, 2.6rem); margin-bottom: 1rem; }
+.page-heading { padding-block: clamp(1.6rem, 5vw, 3.6rem) .25rem; }
+.page-heading h1 { font-size: clamp(2.1rem, 6vw, 4.8rem); letter-spacing: -.045em; color: var(--pink); }
+.page-heading p, .studio-section p, .course-schedule li { color: var(--muted); }
+.page-heading p { max-width: 65ch; }
+.overline { color: var(--pink); font-weight: 750; letter-spacing: .12em; text-transform: uppercase; font-size: .85rem; }
+.button-row { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; }
+.site-main .primary-button, .site-main .secondary-button, .message-form .primary-button, .chat-window .primary-button {
+  display: inline-flex; justify-content: center; align-items: center; min-height: 44px; text-align: center; cursor: pointer;
+  border-radius: 100px; font-weight: 750; padding: .6rem 1rem; line-height: 1.25; max-width: 100%;
+}
+.site-main .primary-button, .message-form .primary-button, .chat-window .primary-button { background: var(--pink); color: #1b0d18; border: 1px solid transparent; }
+.site-main .primary-button:hover, .message-form .primary-button:hover, .chat-window .primary-button:hover { background: var(--pink-hover); }
+.site-main .secondary-button { color: var(--text); border: 1px solid #846877; background: transparent; }
+.site-main .secondary-button:hover { border-color: var(--pink); color: var(--pink); }
+.primary-button:disabled { opacity: .7; cursor: wait; }
+.studio-socials { display: flex; gap: .6rem; margin-top: .8rem; }
+.studio-socials a { border-radius: .6rem; color: white; width: 38px; height: 38px; display: grid; place-items: center; }
+.studio-socials a:hover { filter: brightness(1.22); }
+.studio-socials svg { width: 1.18rem; height: 1.18rem; }
+.social-facebook { background: #0866ff; }
+.social-instagram { background: radial-gradient(circle at 15% 100%, #fdd65d, #f04835 42%, #c62c91 67%, #5655d4 100%); }
+.course-schedule { padding: 1.4rem; margin-bottom: 3rem; border: 1px solid var(--border); border-radius: 1rem; background: var(--bg-soft); }
+.course-schedule ul { margin: .75rem 0 1rem; padding-inline-start: 1.2rem; }
+.event-hero { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: clamp(1rem, 3vw, 2.3rem); margin-top: 1.6rem; }
+.event-hero img { width: 100%; height: auto; border-radius: 1rem; }
+.event-hero .page-heading { padding: 0; }
+.event-hero h1 { font-size: clamp(2.15rem, 5vw, 4rem); }
+.event-activities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.event-activity, .event-panel { overflow: hidden; border: 1px solid #76405d; border-radius: 1rem; background: #251923; }
+.event-activity img { width: 100%; aspect-ratio: 1.55; object-fit: cover; }
+.event-activity--pole img { object-position: center 21%; }
+.event-activity--cerceau img { object-position: center 34%; }
+.event-activity div, .event-panel { padding: clamp(1rem, 3vw, 1.6rem); }
+.event-price { background: #3a1c31; }
+.event-price h2 { color: var(--pink); }
+.event-price small { display: block; margin-top: .7rem; }
+.commercial-hero { grid-template-columns: 1fr minmax(0, 420px); margin-bottom: 2rem; }
+@media (max-width: 700px) {
+  .event-hero, .event-activities { grid-template-columns: 1fr; }
+}

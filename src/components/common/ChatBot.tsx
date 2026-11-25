@@ -1,75 +1,26 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMessage } from '@fortawesome/free-solid-svg-icons';
+import MessageForm from './MessageForm';
 import '../../styles/chatbot.css';
 
-const Chatbot: React.FC = () => {
+export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
-  const [message, setMessage] = useState('');
-  const [email, setEmail] = useState('');
 
-  const sendMessage = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!message.trim() || !email.trim()) {
-      alert('Veuillez remplir tous les champs.');
-      return;
+  return <div className="chatbot-container" onKeyDown={event => {
+    if (event.key === 'Escape') {
+      setIsOpen(false);
+      document.getElementById('chat-toggle')?.focus();
     }
-
-    emailjs
-      .send(
-        'service_lafuente.sante',
-        'template_ri2ova2',
-        { message, email },
-        'gJWMor4mNkpxe8-y_'
-      )
-      .then(() => {
-        alert('Message envoyé avec succès !');
-        setMessage('');
-        setEmail('');
-        setIsOpen(false);
-      })
-      .catch(() => {
-        alert("Erreur lors de l'envoi du message.");
-      });
-  };
-
-  return (
-    <div className="chatbot-container">
-      <button
-        className="chat-icon"
-        type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label="Ouvrir le chat"
-      >
-        💬
-      </button>
-
-      {isOpen && (
-        <div className="chat-window">
-          <form onSubmit={sendMessage}>
-            <h4>Envoyez-nous un message</h4>
-
-            <input
-              type="email"
-              placeholder="Votre email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-
-            <textarea
-              placeholder="Votre message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-            />
-
-            <button type="submit">Envoyer</button>
-          </form>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default Chatbot;
+  }}>
+    <button id="chat-toggle" className="chat-icon" type="button" aria-expanded={isOpen}
+      aria-controls="quick-message" onClick={() => setIsOpen(!isOpen)}
+      aria-label={isOpen ? 'Fermer le contact rapide' : 'Ouvrir le contact rapide'}>
+      <FontAwesomeIcon icon={faMessage} />
+    </button>
+    <section hidden={!isOpen} className="chat-window" id="quick-message">
+      <h2>Écrire au studio</h2>
+      <MessageForm />
+    </section>
+  </div>;
+}

@@ -144,3 +144,12 @@
     grid-template-columns: 1fr;
   }
 }
+.coach-profile { padding-block: 1.5rem 3rem; }
+.coach-back { display: inline-block; margin-bottom: 1.2rem; text-decoration: underline; }
+.coach-profile-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: start; gap: clamp(1rem, 4vw, 3rem); }
+.coach-profile-grid img { height: auto; width: 100%; border-radius: 1rem; }
+.coach-profile-grid h1 { font-size: clamp(2.4rem, 7vw, 4.8rem); color: var(--pink); margin-bottom: .25rem; }
+.coach-profile-grid h2 { margin-top: 1.4rem; }
+.coach-profile-grid p { color: var(--muted); }
+.coach-profile-grid .coach-profile-role { font-size: 1.2rem; color: var(--text); font-weight: 700; }
+@media (max-width: 730px) { .coach-profile-grid { grid-template-columns: 1fr; } }
