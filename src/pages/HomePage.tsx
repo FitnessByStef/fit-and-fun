@@ -24,15 +24,15 @@ export default function HomePage() {
     <section className="immersive-hero">
       <div className="hero-art">
         <img className="hero-room" src={media + 'salle.webp'} width="1050" height="1037" alt="" loading="eager" />
-        <img className="hero-dust" src={media + 'poudre-rose.webp'} width="800" height="700" alt="" />
-        <img className="hero-aerial" src={media + 'cerceau-detoure.webp'} width="790" height="804"
+        <img className="hero-dust" src={media + 'brume-fuchsia.webp'} width="1000" height="430" alt="" />
+        <img className="hero-aerial" src={media + 'cerceau-pose-sophie.webp'} width="480" height="870"
           alt="Une pratiquante au cerceau aérien dans la salle du Studio Gris" loading="eager" />
       </div>
       <div className="hero-inner">
         <div className="hero-copy">
-          <h1><span>Le Studio</span> <em>Gris</em></h1>
           <p className="hero-disciplines">Danse <span>·</span> Aérien <span>·</span> Fitness</p>
-          <p className="hero-tagline">Bouger, <em>s’élever</em> et <em>se dépasser</em><br /><small>dans un studio chaleureux à Thèze.</small></p>
+          <h1>Le Studio <em>Gris</em></h1>
+          <p className="hero-tagline">Prenez de la hauteur, dansez et entraînez-vous à votre rythme dans un studio chaleureux à Thèze.</p>
           <div className="button-row">
             <Link className="primary-button" to="/planning"><FontAwesomeIcon icon={faCalendarDays} /> Voir le planning</Link>
             <Link className="secondary-button" to="/offers"><FontAwesomeIcon icon={faTicket} /> Découvrir les offres</Link>

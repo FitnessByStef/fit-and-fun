@@ -11,18 +11,19 @@
   background: linear-gradient(0deg, var(--home-ink), transparent 19%), linear-gradient(90deg, var(--home-ink) 1%, #080609e8 28%, #08060900 62%, #08060900 90%, var(--home-ink));
 }
 .hero-art img { position: absolute; }
-.hero-room { height: 100%; width: 78%; right: 0; object-fit: cover; object-position: 53% 56%; opacity: .8; mask-image: linear-gradient(90deg, transparent, #000 24%); }
-.hero-aerial { height: 106%; width: auto; max-width: none; right: clamp(4%, 10vw, 16%); top: -4%; filter: brightness(1.12) drop-shadow(0 8px 22px #0b030bbb); }
-.hero-dust { width: min(61vw, 890px); height: auto; bottom: -25%; right: 1%; opacity: .95; }
+.hero-room { height: 100%; width: 88%; right: 0; object-fit: cover; object-position: 53% 57%; opacity: .86; filter: grayscale(.76); mask-image: linear-gradient(90deg, transparent, #000 30%); }
+.hero-aerial { z-index: 2; height: 94%; width: auto; max-width: none; right: clamp(10%, 15vw, 22%); bottom: clamp(1.1rem, 2.5vw, 2.4rem); filter: brightness(1.06) drop-shadow(0 3px 16px #0b030b99); }
+.hero-dust {
+  width: 100%; height: 100%; object-fit: fill; inset: 0; z-index: 1; opacity: .92;
+  mask-image: linear-gradient(to bottom, #000 0 77%, #000c 86%, #0005 94%, transparent 100%);
+}
 .hero-inner { min-height: clamp(402px, 63svh, 630px); width: min(var(--home-width), 100% - clamp(2rem, 10vw, 11rem)); margin-inline: auto; display: flex; align-items: center; position: relative; }
 .hero-copy { padding: 2rem 0 2.6rem; }
-.hero-copy h1 { display: grid; width: fit-content; font-size: clamp(4rem, 8vw, 9rem); font-weight: 850; line-height: .8; letter-spacing: -.069em; text-transform: uppercase; margin-bottom: 1.15rem; }
-.hero-copy h1 span { font-size: .51em; letter-spacing: .05em; line-height: 1.15; }
-.hero-copy em { font-style: normal; color: var(--pink); }
-.hero-disciplines { color: #fff7fb; font-size: clamp(.83rem, 1.5vw, 1.15rem); letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 1rem; }
+.hero-copy h1 { font-size: clamp(3.25rem, 6.1vw, 7.4rem); font-weight: 850; font-style: italic; line-height: 1; letter-spacing: -.055em; margin-bottom: .85rem; }
+.hero-copy em { font-style: inherit; color: var(--pink); }
+.hero-disciplines { color: var(--pink); font-size: clamp(.83rem, 1.5vw, 1.15rem); letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 1rem; }
 .hero-disciplines span { color: var(--pink); }
-.hero-tagline { font-weight: 700; font-size: clamp(1.12rem, 2vw, 1.6rem); line-height: 1.35; margin-bottom: 1.25rem; }
-.hero-tagline small { color: #e1d8df; font-size: .74em; font-weight: 400; }
+.hero-tagline { color: #f2e8ee; max-width: 37ch; font-size: clamp(1rem, 1.65vw, 1.33rem); line-height: 1.45; margin-bottom: 1.25rem; }
 .hero-copy .primary-button, .hero-copy .secondary-button { gap: .55rem; }
 .hero-copy .primary-button { box-shadow: 0 0 24px #ff2f8640; }
 .hero-copy .secondary-button { background: #0c080e9c; border-color: #d5c4cf; }
@@ -46,19 +47,19 @@
 }
 @media (max-width: 900px) {
   .hero-inner { min-height: clamp(385px, 66vw, 495px); }
-  .hero-aerial { right: -1%; height: 94%; top: 0; }
+  .hero-aerial { right: 9%; height: 91%; }
   .hero-art::after { background: linear-gradient(0deg, var(--home-ink), transparent 28%), linear-gradient(90deg, var(--home-ink), #080609c9 30%, transparent 75%); }
 }
 @media (max-width: 610px) {
   .hero-inner { align-items: end; min-height: 560px; width: calc(100% - 2rem); }
   .hero-copy { padding: 1rem 0 1.7rem; }
-  .hero-copy h1 { font-size: clamp(3.5rem, 16vw, 5.2rem); margin-bottom: .7rem; }
+  .hero-copy h1 { font-size: clamp(2.6rem, 10vw, 4.4rem); margin-bottom: .7rem; }
   .hero-disciplines { margin-bottom: .6rem; }
   .hero-tagline { margin-bottom: .9rem; }
   .hero-art { bottom: auto; height: 385px; }
   .hero-room { width: 100%; object-position: center 54%; mask-image: none; }
-  .hero-aerial { right: max(-1rem, calc(50% - 180px)); top: -1.5rem; height: 90%; }
-  .hero-dust { width: min(110vw, 500px); bottom: -10%; right: -10%; }
+  .hero-aerial { right: max(1.75rem, calc(48% - 95px)); bottom: 1.4rem; height: 90%; }
+  .hero-dust { width: 112%; left: -6%; height: 103%; opacity: .82; }
   .hero-art::after { background: linear-gradient(0deg, var(--home-ink), #080609c9 14%, transparent 54%); }
   .home-universes { grid-template-columns: 1fr; width: calc(100% - 2rem); margin-top: 0; }
   .universe-card-label { justify-content: flex-start; gap: .6rem; font-size: clamp(1.55rem, 7vw, 2.4rem); }

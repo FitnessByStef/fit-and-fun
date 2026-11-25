@@ -43,6 +43,7 @@ export default function Header() {
       <div className="site-header__inner">
         <Link to="/" className="site-logo" onClick={closeMenus}>
           <img src={studio.logo} width="591" height="591" alt="Le Studio Gris, accueil" />
+          {location.pathname === '/' && <span className="home-wordmark" aria-hidden="true">Le Studio <em>Gris</em><small>Danse · Aérien · Fitness</small></span>}
         </Link>
         <nav ref={nav} id="main-navigation" aria-label="Navigation principale" className={mobileOpen ? 'site-nav is-open' : 'site-nav'}>
           <NavLink to="/" end onClick={closeMenus}>Accueil</NavLink>
