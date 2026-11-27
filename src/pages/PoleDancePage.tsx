@@ -1,4 +1,4 @@
-import { studio } from '../studio';
+import { coursePhotos, studio } from '../studio';
 import '../styles/course.css';
 
 const PoleDancePage = () => {
@@ -6,13 +6,12 @@ const PoleDancePage = () => {
     <div className="course-page">
       <div className="course-hero-wrap">
         <section
-          className="course-hero"
+          className="course-hero course-hero--pole"
           style={{
             backgroundImage: `
               linear-gradient(90deg, rgba(8,8,8,0.86) 0%, rgba(8,8,8,0.58) 48%, rgba(8,8,8,0.22) 100%),
-              url('/medias/cours/Pole/Pole3.jpeg')
+              url('${coursePhotos.poleBanner}')
             `,
-            backgroundPosition: 'center 32%',
           }}
         >
           <div className="course-hero__content">

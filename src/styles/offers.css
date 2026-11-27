@@ -8,12 +8,12 @@
 .catalog-section + .catalog-section { margin-top: 1.6rem; }
 .catalog-section h2 { font-size: clamp(1.2rem, 3vw, 1.65rem); }
 .offer-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; }
-.offer-card { min-width: 0; display: flex; flex-direction: column; align-items: start; gap: .34rem; padding: .9rem; border-radius: .75rem; border: 1px solid #ab467f; background: #171218; box-shadow: 0 5px 20px #0003; }
+.offer-card { min-width: 0; display: flex; flex-direction: column; align-items: start; gap: .34rem; padding: .9rem; border-radius: .75rem; border: 1px solid var(--accent-border); background: #171218; box-shadow: 0 5px 20px #0003; }
 .offer-card h3 { font-size: 1rem; margin: 0; }
 .offer-card p { color: var(--muted); margin: 0; }
 .offer-card .offer-price strong { font-size: 1.85rem; color: var(--pink); line-height: 1.1; }
 .offer-price span { white-space: nowrap; font-size: .87rem; }
-.offer-card .offer-free { color: #ffd4eb; border-radius: .35rem; background: #48253a; padding: .15rem .4rem; font-size: .85rem; }
+.offer-card .offer-free { color: var(--accent-light); border-radius: .35rem; background: color-mix(in srgb, var(--pink) 21%, var(--bg-soft)); padding: .15rem .4rem; font-size: .85rem; }
 .offer-action { display: inline-flex; align-items: center; min-height: 44px; margin-top: auto; padding-top: .15rem; color: var(--pink); font-weight: 700; text-decoration: underline; text-underline-offset: .18em; }
 .offer-action:hover { color: var(--pink-hover); }
 @media (max-width: 960px) { .offer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

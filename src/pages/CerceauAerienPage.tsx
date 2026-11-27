@@ -1,4 +1,4 @@
-import { studio } from '../studio';
+import { coursePhotos, studio } from '../studio';
 import '../styles/course.css';
 
 const CerceauAerienPage = () => {
@@ -6,13 +6,12 @@ const CerceauAerienPage = () => {
     <div className="course-page">
       <div className="course-hero-wrap">
         <section
-          className="course-hero"
+          className="course-hero course-hero--cerceau"
           style={{
             backgroundImage: `
               linear-gradient(90deg, rgba(8,8,8,0.84) 0%, rgba(8,8,8,0.56) 42%, rgba(8,8,8,0.20) 100%),
-              url('/medias/cours/Cerceau Aerien/CerceauAerien.jpeg')
+              url('${coursePhotos.cerceauBanner}')
             `,
-            backgroundPosition: 'center 30%',
           }}
         >
           <div className="course-hero__content">
@@ -88,8 +87,9 @@ const CerceauAerienPage = () => {
           <img
             loading="lazy"
             decoding="async"
-            src="/medias/cours/Cerceau Aerien/CerceauAerien5.jpeg"
-            alt="Pratique du cerceau aérien au Studio Gris"
+            className="course-photo--cerceau-audience"
+            src={coursePhotos.cerceauAudience}
+            alt="Une pratiquante en tenue verte sur un cerceau rose au Studio Gris"
           />
         </div>
 

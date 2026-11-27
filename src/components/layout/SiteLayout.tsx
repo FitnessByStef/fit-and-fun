@@ -6,7 +6,7 @@ import Footer from './Footer';
 import Chatbot from '../common/ChatBot';
 import { breadcrumbs, canonicalUrl, imageUrl, pageMetadata, structuredData } from '../../metadata';
 import { offerCategories, offersPath } from '../../offers';
-import { studio } from '../../studio';
+import { homeStudioImage, studio } from '../../studio';
 import '../../styles/layout.css';
 
 export default function SiteLayout() {
@@ -39,7 +39,7 @@ export default function SiteLayout() {
         <meta property="og:url" content={canonicalUrl(contentPath)} />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="canonical" href={canonicalUrl(contentPath)} />
-        {path === '/' && <link rel="preload" as="image" href="/medias/accueil/salle.webp" />}
+        {path === '/' && <link rel="preload" as="image" href={homeStudioImage} />}
         <script type="application/ld+json">{JSON.stringify(structuredData(contentPath, title.split(' | ')[0], description)).replace(/</g, '\\u003c')}</script>
     </Helmet> : <Helmet><title>{title}</title><meta name="robots" content="noindex" /></Helmet>}
     <a className="skip-link" href="#main-content">Aller au contenu</a>

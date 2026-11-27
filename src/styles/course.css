@@ -169,3 +169,10 @@
     grid-template-columns: 1fr;
   }
 }
+.course-hero.course-hero--pole { background-position: center 61%; }
+.course-hero.course-hero--cerceau { background-position: center 47%; }
+.course-split__media .course-photo--cerceau-audience { object-fit: contain; background: var(--bg-soft); }
+@media (max-width: 600px) {
+  .course-hero.course-hero--pole { background-position: 38% 59%; }
+  .course-hero.course-hero--cerceau { background-position: center 45%; }
+}

@@ -8,7 +8,7 @@
   padding: 64px 24px;
   border-radius: 32px;
   background:
-    linear-gradient(135deg, rgba(255, 47, 134, 0.18), rgba(255, 255, 255, 0.04)),
+    linear-gradient(135deg, color-mix(in srgb, var(--pink) 18%, transparent), rgba(255, 255, 255, 0.04)),
     #141418;
   box-shadow: var(--shadow);
 }

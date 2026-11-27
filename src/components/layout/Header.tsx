@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import SocialLinks from '../common/SocialLinks';
-import { coursePath, disciplines, fitnessUniverseImage, groups, navigation, studio, universePaths } from '../../studio';
+import { featuredActivities, navigation, studio } from '../../studio';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -51,15 +51,9 @@ export default function Header() {
             <button ref={coursesButton} className="site-nav__dropdown-trigger" type="button" aria-expanded={coursesOpen}
               aria-controls="course-navigation" onClick={() => setCoursesOpen(!coursesOpen)}>Cours <span aria-hidden="true">▾</span></button>
             <div id="course-navigation" className={coursesOpen ? 'site-nav__dropdown-menu is-open' : 'site-nav__dropdown-menu'}>
-              {groups.map((group, index) => <div className="site-nav__dropdown-column" key={group}>
-                <Link className="dropdown-universe" to={index === 0 ? universePaths.aerial : universePaths.fitness} onClick={closeMenus}>
-                  <img src={index === 0 ? '/medias/accueil/danse-aerien.webp' : fitnessUniverseImage} alt="" loading="lazy" className={index === 1 ? 'dropdown-fitness-image' : undefined} />
-                  <span>{group}</span>
-                </Link>
-                {Object.values(disciplines).filter(course => course.group === group).map(course =>
-                  <NavLink key={course.slug} to={coursePath(course.slug)} onClick={closeMenus}>{course.name}</NavLink>
-                )}
-              </div>)}
+              {featuredActivities.map(activity => <NavLink key={activity.path} to={activity.path} onClick={closeMenus}>
+                {activity.title}
+              </NavLink>)}
             </div>
           </div>
           {navigation.slice(1).map(([path, label]) => <NavLink key={path} to={path} onClick={closeMenus}>{label}</NavLink>)}

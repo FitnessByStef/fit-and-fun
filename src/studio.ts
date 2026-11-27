@@ -1,9 +1,14 @@
 import studio from './studio-config.json';
 
 export { studio };
+export const homeStudioImage = '/medias/accueil/salle-plafond-etoile.webp';
 export const fitnessUniverseImage = '/medias/accueil/fitness.webp';
-export const eventImage = '/medias/studio/evjf-girls-night.jpeg';
-export const eventImageAlt = 'EVJF & Girls Night, rubans roses et boule à facettes';
+export const eventImage = {
+  src: '/medias/accueil/evjf-girls-night-miniature.webp',
+  width: 1208,
+  height: 393,
+  alt: 'EVJF & Girls Night, un groupe d’amies danse sous une boule à facettes',
+};
 
 export const universePaths = { aerial: '/cours/danse-aerien', fitness: '/cours/fitness' };
 
@@ -25,6 +30,21 @@ export const disciplines = {
 export type Discipline = keyof typeof disciplines;
 export const groups = ['Danse & aérien', 'Fitness'];
 export const coursePath = (slug: string) => '/cours/' + slug;
+
+export const coursePhotos = {
+  poleBanner: '/medias/cours/Pole/pole-dance-bandeau.jpg',
+  cerceauBanner: '/medias/cours/Cerceau Aerien/cerceau-aerien-bandeau.jpg',
+  cerceauAudience: '/medias/cours/Cerceau Aerien/cerceau-aerien-pour-qui.jpg',
+};
+
+export const featuredActivities = [
+  { title: disciplines.pole.name, path: coursePath(disciplines.pole.slug), image: '/medias/cours/Pole/pole-dance-miniature.jpg', width: 234, height: 313, style: 'pole' },
+  { title: disciplines.cerceau.name, path: coursePath(disciplines.cerceau.slug), image: coursePhotos.cerceauBanner, width: 1248, height: 1600, style: 'aerial' },
+  { title: disciplines.kids.name, path: coursePath(disciplines.kids.slug), image: '/medias/cours/Cerceau enfant/CerceauEnfant5.jpeg', width: 1200, height: 1600, style: 'kids' },
+  { title: 'Danses commerciales', path: coursePath(disciplines.commerciale.slug), image: disciplines.commerciale.image, width: 1284, height: 1258, style: 'dance' },
+  { title: 'Fitness', path: universePaths.fitness, image: fitnessUniverseImage, width: 860, height: 500, style: 'fitness' },
+  { title: 'EVJF & Girls Night', path: '/evjf-girls-night', image: eventImage.src, width: eventImage.width, height: eventImage.height, style: 'event' },
+] as const;
 export const days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
 interface Session {
   day: number;

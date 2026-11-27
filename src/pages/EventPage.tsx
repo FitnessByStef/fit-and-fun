@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { coursePath, disciplines, eventImage, eventImageAlt } from '../studio';
+import { coursePath, disciplines, eventImage } from '../studio';
 
 export default function EventPage() {
   return <div className="studio-container event-page">
     <section className="event-hero">
       <Link to="/evjf-girls-night/#devis" aria-label="Consulter le tarif et demander un devis">
-        <img src={eventImage} width="1284" height="708" alt={eventImageAlt} loading="eager" />
+        <img src={eventImage.src} width={eventImage.width} height={eventImage.height} alt={eventImage.alt} loading="eager" />
       </Link>
       <div className="page-heading">
         <h1>EVJF & Girls Night</h1>

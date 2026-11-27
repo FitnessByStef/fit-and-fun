@@ -25,16 +25,17 @@
 .course-schedule { padding: 1.4rem; margin-bottom: 3rem; border: 1px solid var(--border); border-radius: 1rem; background: var(--bg-soft); }
 .course-schedule ul { margin: .75rem 0 1rem; padding-inline-start: 1.2rem; }
 .event-hero { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: clamp(1rem, 3vw, 2.3rem); margin-top: 1.6rem; }
+.event-page .event-hero { grid-template-columns: minmax(0, 1fr); }
 .event-hero img { width: 100%; height: auto; border-radius: 1rem; }
 .event-hero .page-heading { padding: 0; }
 .event-hero h1 { font-size: clamp(2.15rem, 5vw, 4rem); }
 .event-activities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.event-activity, .event-panel { overflow: hidden; border: 1px solid #76405d; border-radius: 1rem; background: #251923; }
+.event-activity, .event-panel { overflow: hidden; border: 1px solid var(--accent-border); border-radius: 1rem; background: #251923; }
 .event-activity img { width: 100%; aspect-ratio: 1.55; object-fit: cover; }
 .event-activity--pole img { object-position: center 21%; }
 .event-activity--cerceau img { object-position: center 34%; }
 .event-activity div, .event-panel { padding: clamp(1rem, 3vw, 1.6rem); }
-.event-price { background: #3a1c31; }
+.event-price { background: color-mix(in srgb, var(--pink) 14%, var(--bg-soft)); }
 .event-price h2 { color: var(--pink); }
 .event-price small { display: block; margin-top: .7rem; }
 .commercial-hero { grid-template-columns: 1fr minmax(0, 420px); margin-bottom: 2rem; }

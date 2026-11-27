@@ -1,18 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCalendarDays, faTicket } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { eventImage, fitnessUniverseImage, universePaths } from '../studio';
+import { featuredActivities, homeStudioImage } from '../studio';
 import '../styles/home.css';
 
-const media = '/medias/accueil/';
-
-const gateways = [
-  { title: 'Danse & Aérien', path: universePaths.aerial, image: '/medias/cours/Cerceau Aerien/CerceauAerien4.jpeg', width: 1200, height: 1600, style: 'aerial' },
-  { title: 'Fitness', path: universePaths.fitness, image: fitnessUniverseImage, width: 860, height: 500, style: 'fitness' },
-  { title: 'EVJF & Girls Night', path: '/evjf-girls-night', image: eventImage, width: 1284, height: 708, style: 'event' },
-];
-
-function UniverseCard({ gateway }: { gateway: typeof gateways[number] }) {
+function UniverseCard({ gateway }: { gateway: typeof featuredActivities[number] }) {
   return <Link to={gateway.path} className={'universe-card universe-card--' + gateway.style} aria-label={gateway.title}>
     <img src={gateway.image} width={gateway.width} height={gateway.height} alt="" />
     {gateway.style !== 'event' && <span className="universe-card-label">{gateway.title}<FontAwesomeIcon icon={faArrowRight} /></span>}
@@ -23,10 +15,8 @@ export default function HomePage() {
   return <div className="home-page">
     <section className="immersive-hero">
       <div className="hero-art">
-        <img className="hero-room" src={media + 'salle.webp'} width="1050" height="1037" alt="" loading="eager" />
-        <img className="hero-dust" src={media + 'brume-fuchsia.webp'} width="1000" height="430" alt="" />
-        <img className="hero-aerial" src={media + 'cerceau-pose-sophie.webp'} width="480" height="870"
-          alt="Une pratiquante au cerceau aérien dans la salle du Studio Gris" loading="eager" />
+        <img className="hero-room" src={homeStudioImage} width="1200" height="1600" alt="La salle du Studio Gris, avec sa mezzanine et son plafond peint" loading="eager" />
+        <img className="hero-dust" src="/medias/accueil/brume-fuchsia.webp" width="1000" height="430" alt="" />
       </div>
       <div className="hero-inner">
         <div className="hero-copy">
@@ -41,7 +31,7 @@ export default function HomePage() {
       </div>
     </section>
     <nav className="home-universes" aria-label="Les activités du Studio Gris">
-      {gateways.map(gateway => <UniverseCard key={gateway.path} gateway={gateway} />)}
+      {featuredActivities.map(gateway => <UniverseCard key={gateway.path} gateway={gateway} />)}
     </nav>
   </div>;
 }

@@ -33,8 +33,9 @@ export function pageMetadata(path: string) {
 
 export function breadcrumbs(path: string, title: string) {
   const course = Object.values(disciplines).find(item => coursePath(item.slug) === path);
+  if (course?.slug === disciplines.commerciale.slug) return [{ path: '/', label: 'Accueil' }, { path, label: course.name }];
   const parent = course
-    ? { path: course.group === 'Fitness' ? universePaths.fitness : universePaths.aerial, label: course.group }
+    ? { path: course.group === 'Fitness' ? universePaths.fitness : universePaths.aerial, label: course.group === 'Fitness' ? course.group : 'Aérien' }
     : path.startsWith('/coachs/') ? { path: '/about', label: 'L’équipe' } : null;
   return parent ? [{ path: '/', label: 'Accueil' }, parent, { path, label: course?.name ?? title.split(',')[0] }] : [];
 }
